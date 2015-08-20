@@ -1,0 +1,16 @@
+Creating Project
+mvn archetype:generate
+
+Groupid
+Artifact id:
+
+Command will connect Maven to eclipse
+mvn eclipse:eclipse
+
+Compile
+mvn compile - Checks for Syntax errors in the code
+mvn test    - Download all the Jars which are required. Reference pom.xml
+
+Profiles
+mvn test - PSmokeTesting
+mvn test - PRegressionTesting
