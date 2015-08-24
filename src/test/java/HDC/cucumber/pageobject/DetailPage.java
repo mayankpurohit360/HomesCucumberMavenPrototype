@@ -43,15 +43,7 @@ public class DetailPage extends AbstractPage {
 	By LocalSchoolsToolTip      = By.cssSelector(".icon-tooltip._tooltip");
 	By ViewMoreSchoolsLink      = By.cssSelector(".view-more>a");
 	By LocalSchoolsModuleFR       = By.xpath("html/body/div[1]/div[1]/div[2]/div[2]/div[3]");
-    By PopulateLoanAmountValue    = By.id("loanAmount");
-   By DownPayementDropDownValue  = By.xpath("//select[@id='downpayment']");
-   By CreditCardDropDownValue  =   By.xpath("//select[@id='score']");
-   By EntercitynameValue=          By.xpath("//input[@id='city']");
-   By StateDropDownValue=          By.xpath("//select[@id='state']");
-   By firstnameValue=              By.xpath("//input[@id='first']");
-   By lastnamevalue                =By.xpath("//input[@id='last']");
-   By PhoneNumberField= By.xpath("//input[@id='phone']");
-	
+   
 	//Detail Page methods
 	public DetailPage PopulateField(String arg1, String arg2){
 		WebElement element = driver.findElement(By.id(arg2));
@@ -273,7 +265,7 @@ public class DetailPage extends AbstractPage {
 	
 	
 	//////////////////////////////// Mortgage Detail Page////////////////////////////////////////////
-	public DetailPage PopulateLoanAmountValue(String value) throws InterruptedException
+	/*public DetailPage PopulateLoanAmountValue(String value) throws InterruptedException
 	{
 		System.out.println("Value on function"+value);	
 			WebElement element = driver.findElement(PopulateLoanAmountValue);
@@ -350,46 +342,47 @@ public class DetailPage extends AbstractPage {
 	public DetailPage EmailfieldMortagePage(String value){
 		//System.out.println("Searched City: "+value);
 		driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
-		WebElement element = driver.findElement(By.xpath("//input[@id='email']"));
+		WebElement element = driver.findElement(EmailfieldMortagePageValue);
 		element.clear();
 		element.sendKeys(value);
+		
 		//driver.manage().timeouts().implicitlyWait(20000, TimeUnit.SECONDS);
 		
 		return new DetailPage(driver);
 	}
 	
 	public DetailPage PrequalifiedButtonMortagePage(){
-		WebElement element = driver.findElement(By.xpath("//input[@id='submiter']"));
+		WebElement element = driver.findElement(PrequalifiedButtonMortagePageLocator);
+		
 		element.click();
 		return new DetailPage(driver);
 	}
 	
 	public DetailPage SelectBankruptcyOption(String value){
-		WebElement ele	=	driver.findElement(By.id("bankruptcyHistory"));
+		WebElement ele	=	driver.findElement(SelectBankruptcyOptionLocator);
 		Select sel	=	new Select(ele);
 		sel.selectByVisibleText(value);
 		driver.manage().timeouts().implicitlyWait(20000, TimeUnit.SECONDS);
-		
 		return new DetailPage(driver);
 	}
 	
 	public DetailPage EstimatePropertyValuefield(String value){
 		driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
-		WebElement element = driver.findElement(By.xpath("//input[@id='est_prop_val']"));
+		WebElement element = driver.findElement(EstimatePropertyValuefieldLocator);
 		element.clear();
 		element.sendKeys(value);
 		return new DetailPage(driver);
 	}
 	
 	public DetailPage ClickSubmitRequestonRefiRequest(){
-		WebElement element = driver.findElement(By.xpath("//input[@id='submit']"));
+		WebElement element = driver.findElement(SubmitRequestonRefiRequestlocator);
 		element.click();
 		return new DetailPage(driver);
 	}
 	
 	public DetailPage EnterStreetAddressonMortage(String value){
 		driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
-		WebElement element = driver.findElement(By.xpath("//input[@id='streetAddress']"));
+		WebElement element = driver.findElement(StreetAddressonMortageLocator);
 		element.clear();
 		element.sendKeys(value);
 		return new DetailPage(driver);
@@ -398,7 +391,7 @@ public class DetailPage extends AbstractPage {
 	public DetailPage RequestHomeZipField(String value){
 		System.out.println("****************************Request Home field************************************************");
 		driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
-		WebElement element = driver.findElement(By.xpath("//input[@id='zip']"));
+		WebElement element = driver.findElement(RequestHomeZipFieldlocator);
 		element.clear();
 		element.sendKeys(value);
 		//driver.manage().timeouts().implicitlyWait(20000, TimeUnit.SECONDS);
@@ -408,11 +401,11 @@ public class DetailPage extends AbstractPage {
 	public DetailPage submitCMARequestForm()
 	{
 
-		WebElement element = driver.findElement(By.xpath("//input[@id='submitCMARequestForm']"));
+		WebElement element = driver.findElement(submitCMARequestFormLocator);
 		//element.click();
 		
 	element.click();
 	return new DetailPage(driver);
 
-	}
+	}*/
 }

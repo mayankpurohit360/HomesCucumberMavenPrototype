@@ -104,6 +104,19 @@ public class AbstractPage  {
 			
 	}
 	
-
+	public DetailPage MortageSalePage(){
+		//driver.navigate().to("http://www.homes.com/property/the-chapel-hill-fl-33333/id-2159229/");
+		driver.navigate().to("http://www.homes.com/property/1410-bolling-ave-norfolk-va-23508/id-400028624011/");
+		driver.manage().window().maximize();
+		return new DetailPage (driver);
+			
+	}
+	public DetailPage SaledetailPageInformaWidget(){
+		//driver.navigate().to("http://www.homes.com/property/the-chapel-hill-fl-33333/id-2159229/");
+		driver.navigate().to("http://www.homes.com/property/6048-churchill-ct-ketchikan-ak-99901/id-700019420311/");
+		driver.manage().window().maximize();
+		return new DetailPage (driver);
+			
+	}
 
 }

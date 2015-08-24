@@ -13,9 +13,32 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import HDC.cucumber.pageobject.DetailPage;
 import HDC.cucumber.pageobject.HomePagePortal;
 import HDC.cucumber.pageobject.SearchPage;
+import HDC.cucumber.pageobject.requestPageMRH;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
@@ -31,6 +54,8 @@ public class Steps {
 	HomePagePortal homePagePortal;
 	SearchPage searchPage;
 	DetailPage detailPage;
+	requestPageMRH RequestPageMRH;
+	
 	
 	/*
 	WebDriver driver = getDriver();
@@ -547,23 +572,26 @@ public class Steps {
 	@When("^I enter \"([^\"]*)\" in the loan amount field$")
 	public void PopulateLoanAmount (String value) throws Throwable {
 		
-		detailPage= new DetailPage(driver);
-		detailPage.PopulateLoanAmountValue(value);
+		//detailPage= new DetailPage(driver);
+		RequestPageMRH = new requestPageMRH(driver);
+		RequestPageMRH.PopulateLoanAmountValue(value);
 	}
 
 	@And ("^I select \"([^\"]*)\" from the downpayment dropdown$") 
 	public void DownPayementDrop(String Name){
 		
-		detailPage= new DetailPage(driver);
-		detailPage.DownPayementDropDown(Name);
+		//detailPage= new DetailPage(driver);
+		RequestPageMRH = new requestPageMRH(driver);
+		RequestPageMRH.DownPayementDropDown(Name);
 		//System.out.println("Populated Phone Field");	
 	}
 	
 	@And ("^I select \"([^\"]*)\" from the credit rating dropdown$") 
 	public void CreditDrop(String Name){
 			
-		detailPage= new DetailPage(driver);
-		detailPage.CreditCardDropDown(Name);
+	//	detailPage= new DetailPage(driver);
+		RequestPageMRH = new requestPageMRH(driver);
+		RequestPageMRH.CreditCardDropDown(Name);
 			
 	}
 	
@@ -571,23 +599,26 @@ public class Steps {
 	public void EnterCity(String value) throws Throwable {
 		System.out.println("Searched City: "+value);
 		
-		detailPage= new DetailPage(driver);
-		detailPage.Entercityname(value);
+		//detailPage= new DetailPage(driver);
+		RequestPageMRH = new requestPageMRH(driver);
+		RequestPageMRH.Entercityname(value);
 		
 	}
 
 	@And ("^I select \"([^\"]*)\" from the state dropdown$") 
 	public void StateDrop(String Name){
 			
-		detailPage= new DetailPage(driver);
-		detailPage.StateDropDown(Name);
+	//	detailPage= new DetailPage(driver);
+		RequestPageMRH = new requestPageMRH(driver);
+		RequestPageMRH.StateDropDown(Name);
 	}
 	@And("^I enter \"([^\"]*)\" in the first name field$")
 	public void EnterFirstName(String value) throws Throwable {
 		System.out.println("Searched City: "+value);
 		
-		detailPage= new DetailPage(driver);
-		detailPage.firstname(value);
+		//detailPage= new DetailPage(driver);
+		RequestPageMRH = new requestPageMRH(driver);
+		RequestPageMRH.firstname(value);
 	}
 	
 	@And("^I enter \"([^\"]*)\" in the last name field$")
@@ -595,30 +626,34 @@ public class Steps {
 		System.out.println("Searched City: "+value);
 		
 		
-		detailPage= new DetailPage(driver);
-		detailPage.lastname(value);
+	//	detailPage= new DetailPage(driver);
+		RequestPageMRH = new requestPageMRH(driver);
+		RequestPageMRH.lastname(value);
 	}
 	@And("^I enter \"([^\"]*)\" in the phone field on the mortgage page$")
 	public void EnterPhoneName(String value) throws Throwable {
 		System.out.println("Searched City: "+value);
 		
-		detailPage= new DetailPage(driver);
-		detailPage.PhonefieldMortagePage(value);
+		//detailPage= new DetailPage(driver);
+		RequestPageMRH = new requestPageMRH(driver);
+		RequestPageMRH.PhonefieldMortagePage(value);
 		//detailPage.PopulateLoanAmountValue(value);
 	}
 	@And("^I enter \"([^\"]*)\" in the email field on the mortgage page$")
 	public void EnterEmailName(String value) throws Throwable {
 		System.out.println("Searched City: "+value);
 		
-		detailPage= new DetailPage(driver);
-		detailPage.EmailfieldMortagePage(value);
+	//	detailPage= new DetailPage(driver);
+		RequestPageMRH = new requestPageMRH(driver);
+		RequestPageMRH.EmailfieldMortagePage(value);
 	}
 	
 	@And("^I click the get grequalified button$")
 	public void PrequalifiedButton() throws Throwable {
 		
-		detailPage= new DetailPage(driver);
-		detailPage.PrequalifiedButtonMortagePage();
+		//detailPage= new DetailPage(driver);
+		RequestPageMRH = new requestPageMRH(driver);
+		RequestPageMRH.PrequalifiedButtonMortagePage();
 	}
 	@Then("^I should see \"([^\"]*)\" on mortage page$")
 	public void MatchMortagePage(String Message) throws Throwable {
@@ -635,8 +670,9 @@ public class Steps {
 	public void Bankrup(String Name){
 		driver.manage().timeouts().implicitlyWait(200000, TimeUnit.SECONDS);
 
-		detailPage= new DetailPage(driver);
-		detailPage.SelectBankruptcyOption(Name);
+		//detailPage= new DetailPage(driver);
+		RequestPageMRH = new requestPageMRH(driver);
+		RequestPageMRH.SelectBankruptcyOption(Name);
 		//System.out.println("Populated Phone Field");	
 	}
 	//-----------------------------------Request refi---------------------------------------------
@@ -646,16 +682,18 @@ public class Steps {
 	public void EstimatePropertyValue(String value) throws Throwable {
 		
 		
-		detailPage= new DetailPage(driver);
-		detailPage.EstimatePropertyValuefield(value);
+		//detailPage= new DetailPage(driver);
+		RequestPageMRH = new requestPageMRH(driver);
+		RequestPageMRH.EstimatePropertyValuefield(value);
 		//detailPage.PopulateLoanAmountValue(value);
 	}
 	@And("^I click the Submit Request button$")
 	public void ClickSubmitRequest() throws Throwable {
 		
 	
-		detailPage= new DetailPage(driver);
-		detailPage.ClickSubmitRequestonRefiRequest();
+		//detailPage= new DetailPage(driver);
+		RequestPageMRH = new requestPageMRH(driver);
+		RequestPageMRH.ClickSubmitRequestonRefiRequest();
 		//return new DetailPage(driver);
 	}
 	@Then("^I should see \"([^\"]*)\" in the new page$")
@@ -688,8 +726,9 @@ public class Steps {
 	@And("^I enter \"([^\"]*)\" in the address field$")
 	public void RequestHomeEstimateAddress(String value) throws Throwable {
 		System.out.println("Searched City: "+value);
-		detailPage= new DetailPage(driver);
-		detailPage.EnterStreetAddressonMortage(value);
+	//	detailPage= new DetailPage(driver);
+		RequestPageMRH = new requestPageMRH(driver);
+		RequestPageMRH.EnterStreetAddressonMortage(value);
 		//System.out.println("Populated Email Field");
 		
 	}
@@ -697,15 +736,15 @@ public class Steps {
 	@And("^I enter \"([^\"]*)\" in the zip field$")
 	public void RequestHomeZip(String value) throws Throwable {
 		System.out.println("Searched City: "+value);
-			detailPage= new DetailPage(driver);
-		  	detailPage.RequestHomeZipField(value);
+		RequestPageMRH = new requestPageMRH(driver);
+		RequestPageMRH.RequestHomeZipField(value);
 	    
 	}
 	
 	@And("^I click the submitCMARequestFormButton$")
 	public void submitCMARequestFormButton() throws Throwable {
-				detailPage= new DetailPage(driver);
-	  	detailPage.submitCMARequestForm();
+		RequestPageMRH = new requestPageMRH(driver);
+		RequestPageMRH.submitCMARequestForm();
 	}
 	@Then("^I should see \"([^\"]*)\" on home estimate$")
 	//Thread.sleep(5000);
@@ -719,6 +758,7 @@ public class Steps {
 		  {
 		    System.out.println("Fail");
 		  }
+///////////////////// ESTIMATE MORTGAGE ESTIMATE////////////////////////////////////////////////
 	}
 
 	
@@ -862,6 +902,246 @@ public void NavigateToRequestHomeEstimate() throws Throwable {
     System.out.println("Mortage Executed navigation");	    
 }
 
+@Given("^I am on a For Sale details page that has the bankrate widget$")
+public void NavigateToSaleDetailBankRateWidget() throws Throwable {
+    //driver.get("http://homes.com");
+	homePagePortal = new HomePagePortal(driver);
+	homePagePortal.MortageSalePage();
+    System.out.println("Mortage Executed navigation");	    
+}
+
+
+@Given("^I am on a For Sale details page that has the informa widget$")
+public void NavigateToSaledetailPageInformaWidget() throws Throwable {
+    //driver.get("http://homes.com");SaledetailPageInformaWidget
+	homePagePortal = new HomePagePortal(driver);
+	homePagePortal.SaledetailPageInformaWidget();
+    System.out.println("Mortage Executed navigation");	    
+}
 
 ///////////////////////////////////Mortgage Pages functions  URL completed /////////////////////////////////////
+
+            ////////////////// ESTIMATE MORTAGE RATE//////////////////////////////////
+            ////                                                                 ////
+            /////////////////////////////////////////////////////////////////////////
+
+
+@Then("^I scroll down couple of times$")
+public void ScrollPopertyDetailPage() throws Throwable {
+	RequestPageMRH = new requestPageMRH(driver);
+	RequestPageMRH.ScrollMortgagePopertyDetailPageUDP();
+	
+	//detailPage.navigateToBuilderUDP();
+	System.out.println("Executed Sale navigation");
 }
+
+@Then("^I should see \"([^\"]*)\" as the title for the estimated mortgage rate module header at position 6$")
+public void MatchMessage(String Message) throws Throwable {
+	String msg=Message;
+	System.out.println("---------------Function called-----------------------------"+msg);
+			
+	System.out.println("ConfirmationMessage Assertion: "+RequestPageMRH.MatchMortageMessage(msg));
+	
+	Assert.assertTrue("No Confirmation Message", RequestPageMRH.MatchMortageMessage(msg).equals(Message));
+	System.out.println("Is Confirmation Message Displayed: "+RequestPageMRH.MatchMortageMessage(msg).equals(Message));
+}  
+
+@Then("^I can see the Estimated Mortgage Rates Module$")
+public void SeeEstimateMortageRate() throws Throwable {
+	RequestPageMRH = new requestPageMRH(driver);
+	RequestPageMRH.SeeEstimateMortageRateModule();
+	
+	//detailPage.navigateToBuilderUDP();
+	System.out.println("Executed Sale navigation");
+}
+
+@Then("^I should see \"([^\"]*)\" as the text for the product name$")
+public void fixedMortageMatchMessage(String Message) throws Throwable {
+	String msg=Message;
+	
+	if(driver.getPageSource().contains(msg))
+	  {
+	    System.out.println("Pass");
+	  }
+	else
+	  {
+	    System.out.println("Fail");
+	  }
+
+}
+@Then("^I can see the bankrate credit score slider$")
+public void BankRateCreditScoreSlider() throws Throwable {
+	RequestPageMRH = new requestPageMRH(driver);
+	RequestPageMRH.MortageBankRateCreditScoreSlider();
+	
+	//detailPage.navigateToBuilderUDP();
+	System.out.println("Executed Sale navigation");
+}
+
+@Then("^I should see \"([^\"]*)\" as the value for the credit score$")
+public void MatchExcellentMessage(String Message) throws Throwable {
+	Thread.sleep(20000);
+	String msg=Message;
+	System.out.println("---------------Function called-----------------------------"+msg);
+	
+	RequestPageMRH = new requestPageMRH(driver);
+	     
+	 System.out.println("ConfirmationMessage Assertion: "+RequestPageMRH.MatchExcellentMessage(msg));
+	Assert.assertTrue("No Confirmation Message", RequestPageMRH.MatchExcellentMessage(msg).equals(Message));
+	System.out.println("Is Confirmation Message Displayed: "+RequestPageMRH.MatchExcellentMessage(msg).equals(Message));
+	
+	
+}
+@Then("I drag the credit score slider all the way to the left$")
+public void DragSlider() throws Throwable {
+	 driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
+	 RequestPageMRH = new requestPageMRH(driver);
+	 RequestPageMRH.DragSliderLeft();
+	//System.out.println("Submitted Form");  	
+	
+	}
+@Then("I drag the credit score slider to the right$")
+public void DragSliderRight() throws Throwable {
+	System.out.println("----right----");
+	 driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
+	 RequestPageMRH = new requestPageMRH(driver);
+	 RequestPageMRH.DragSliderRightShift();
+	//System.out.println("Submitted Form");  	
+	
+	
+}
+
+@Then("^I can see the bankrate downpayment slider$")
+public void BankRateDownPayementSlider() throws Throwable {
+	RequestPageMRH = new requestPageMRH(driver);
+	RequestPageMRH.MortageBankRateDownPayementScoreSlider();
+	
+	//detailPage.navigateToBuilderUDP();
+	System.out.println("Executed Sale navigation");
+}
+
+@Then("^I should see \"([^\"]*)\" as the value for the down payment$")
+public void MatchCreditScoreValue(String Message) throws Throwable {
+	String msg=Message;
+	System.out.println("---------------Function called-----------------------------"+msg);
+			
+	System.out.println("ConfirmationMessage Assertion: "+RequestPageMRH.MatchCreditScore(msg));
+	
+	Assert.assertTrue("No Confirmation Message", RequestPageMRH.MatchCreditScore(msg).equals(Message));
+	System.out.println("Is Confirmation Message Displayed: "+RequestPageMRH.MatchCreditScore(msg).equals(Message));
+}
+@Then("I drag the down payment slider all the way to the right$")
+public void DragDownPayementSliderRight() throws Throwable {
+	System.out.println("----right----");
+	 driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
+	 RequestPageMRH = new requestPageMRH(driver);
+	 RequestPageMRH.DragdownpayementSliderRightShift();
+	//System.out.println("Submitted Form");  	
+	
+	
+}
+@Then("I drag the down payment slider all the way to the left$")
+public void DragDownPayementSliderLeft() throws Throwable {
+	System.out.println("----right----");
+	 driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
+	 RequestPageMRH = new requestPageMRH(driver);
+	 RequestPageMRH.DragdownpayementSliderLeftShift();
+	//System.out.println("Submitted Form");  	
+	
+}
+@Then("I click the bankrate Disclaimer$")
+public void ClickDisclaimerbutton() throws Throwable {
+	 driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
+	 RequestPageMRH = new requestPageMRH(driver);
+	 RequestPageMRH.ClickBankDisclaimerlink();
+	//System.out.println("Submitted Form");  	
+		
+}
+
+@Then("^I should see \"([^\"]*)\" as a paragraph in the bankrate disclaimer$")
+public void MatchDisclamierValue(String Message) throws Throwable {
+	Thread.sleep(20000);
+	String msg=Message;
+	System.out.println("---------------Function called-----------------------------"+msg);
+	RequestPageMRH = new requestPageMRH(driver);
+	System.out.println("ConfirmationMessage Assertion: "+RequestPageMRH.MatchDisclamierValueText(msg));
+	
+	Assert.assertTrue("No Confirmation Message", RequestPageMRH.MatchDisclamierValueText(msg).equals(Message));
+	System.out.println("Is Confirmation Message Displayed: "+RequestPageMRH.MatchDisclamierValueText(msg).equals(Message));
+	
+}
+@Then("^I should see \"([^\"]*)\" as a paragraph in the bankrate disclaimer1$")
+public void MatchDisclamierSecondPara(String Message) throws Throwable {
+	Thread.sleep(20000);
+	String msg=Message;
+	System.out.println("---------------Function called-----------------------------"+msg);
+	RequestPageMRH = new requestPageMRH(driver);	
+	System.out.println("ConfirmationMessage Assertion: "+RequestPageMRH.MatchDisclamierSecondPara(msg));
+	
+	Assert.assertTrue("No Confirmation Message", RequestPageMRH.MatchDisclamierSecondPara(msg).equals(Message));
+	System.out.println("Is Confirmation Message Displayed: "+RequestPageMRH.MatchDisclamierSecondPara(msg).equals(Message));
+	
+}
+@Then("^I close the form$")
+public void CloseDispopup() throws Throwable {
+	Thread.sleep(10000);
+	System.out.println("Close Dis popup");
+	RequestPageMRH = new requestPageMRH(driver);	
+	RequestPageMRH.CloseDisclaimerpopup();
+	
+	//detailPage.navigateToBuilderUDP();
+	System.out.println("Executed Sale navigation");
+	
+}
+@Then("I click the bankrate See Additional Rates button$")
+public void ClickBankRateAdditiobalButton() throws Throwable {
+	 driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
+	 RequestPageMRH = new requestPageMRH(driver);
+	 RequestPageMRH.ClickBankRateAdditiobalButtonlink();
+	//System.out.println("Submitted Form");  	
+		
+}
+@Then("^I should see \"([^\"]*)\" in the mortgage rate page$")
+public void MatchRatePageMessage(String Message) throws Throwable {
+	String msg=Message;
+	System.out.println("---------------Function called-----------------------------"+msg);
+	RequestPageMRH = new requestPageMRH(driver);	
+	System.out.println("ConfirmationMessage Assertion: "+RequestPageMRH.MatchRatePageMortageMessage(msg));
+	
+	Assert.assertTrue("No Confirmation Message", RequestPageMRH.MatchRatePageMortageMessage(msg).equals(Message));
+	System.out.println("Is Confirmation Message Displayed: "+RequestPageMRH.MatchRatePageMortageMessage(msg).equals(Message));
+}
+
+@Then("^I scroll down couple of times for see informa widget$")
+public void ScrollPopertyDetailPageforseeInforma() throws Throwable {
+	RequestPageMRH = new requestPageMRH(driver);
+	RequestPageMRH.ScrollMortgagePopertyDetailPageUDPForInforma();
+	
+	//detailPage.navigateToBuilderUDP();
+	System.out.println("Executed Sale navigation");
+}
+@Then("^I should see \"([^\"]*)\" as the title for the estimated mortgage rate module header at position 4$")
+public void MatchMessage1(String Message) throws Throwable {
+	String msg=Message;
+	System.out.println("---------------Function called-----------------------------"+msg);
+	RequestPageMRH = new requestPageMRH(driver);	
+	System.out.println("ConfirmationMessage Assertion: "+RequestPageMRH.MatchMortageMessage(msg));
+	
+	Assert.assertTrue("No Confirmation Message", RequestPageMRH.MatchMortageMessage(msg).equals(Message));
+	System.out.println("Is Confirmation Message Displayed: "+RequestPageMRH.MatchMortageMessage(msg).equals(Message));
+}
+@Then("^I should see \"([^\"]*)\" as a paragraph in the informa disclaimer$")
+public void Matchinfodisclaminer(String Message) throws Throwable {
+
+	String msg=Message;
+	if(driver.getPageSource().contains(msg))
+	  {
+		System.out.println("Is Confirmation Message Displayed: "+"True");
+	  }
+	else
+	  {
+	    System.out.println("No Confirmation Message:"+"false");
+	  }}
+
+}
+

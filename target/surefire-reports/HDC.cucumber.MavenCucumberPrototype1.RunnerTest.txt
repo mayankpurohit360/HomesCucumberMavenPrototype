@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: HDC.cucumber.MavenCucumberPrototype1.RunnerTest
 -------------------------------------------------------------------------------
-Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 49.241 sec
+Tests run: 70, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 482.261 sec

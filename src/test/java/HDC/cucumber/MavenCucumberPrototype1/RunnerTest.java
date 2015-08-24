@@ -13,8 +13,8 @@ import cucumber.api.junit.Cucumber;
 		//tags = {"@test"}
 		//tags = {"@forrentsrp"}
 		//tags = {"@schoolsfs"}
-		//tags = {"@mortage1"}
-		tags = {"@mortgage3"}
+		//tags = {"@mortagefirst"}
+		tags = {"@mortgage"}
 		)
 
 public class RunnerTest {
