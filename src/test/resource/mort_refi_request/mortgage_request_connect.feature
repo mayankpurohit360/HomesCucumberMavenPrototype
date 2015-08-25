@@ -1,4 +1,4 @@
-@portal @regression @mortgage @mortgage1
+@portal @regression @mortgage @mortage1
 Feature: Submitting Mortage Lead from the Mortgage Request Connect page
 	As a user
 	I want to submit a mortgage lead

@@ -1,4 +1,4 @@
-@portal @regression @mortgage3 @mortgage
+@portal @regression @mortgage3
 Feature: Submitting Request Home Estimate Lead 
 	As a user
 	I want to submit a Request Home Estimate

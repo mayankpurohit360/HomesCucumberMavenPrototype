@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="70" failures="0" name="HDC.cucumber.MavenCucumberPrototype1.RunnerTest" time="0.376" errors="0" skipped="0">
+<testsuite tests="13" failures="0" name="HDC.cucumber.MavenCucumberPrototype1.RunnerTest" time="0.129" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_51\jre\bin"/>
@@ -63,64 +63,7 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="Scenario: Interacting with the bankrate widget in the Estimated Mortage Rates Module" name="Given I am on a For Sale details page that has the bankrate widget" time="0.01"/>
-  <testcase classname="Scenario: Interacting with the bankrate widget in the Estimated Mortage Rates Module" name="Then I scroll down couple of times" time="0.022"/>
-  <testcase classname="Scenario: Interacting with the bankrate widget in the Estimated Mortage Rates Module" name="And I should see &quot;Estimated Mortgage Rates&quot; as the title for the estimated mortgage rate module header at position 6" time="0.001"/>
-  <testcase classname="Scenario: Interacting with the bankrate widget in the Estimated Mortage Rates Module" name="Then I can see the Estimated Mortgage Rates Module" time="0"/>
-  <testcase classname="Scenario: Interacting with the bankrate widget in the Estimated Mortage Rates Module" name="Then I should see &quot;30 Year Fixed Mortgage, All Points&quot; as the text for the product name" time="0"/>
-  <testcase classname="Scenario: Interacting with the bankrate widget in the Estimated Mortage Rates Module" name="Then I can see the bankrate credit score slider" time="0"/>
-  <testcase classname="Scenario: Interacting with the bankrate widget in the Estimated Mortage Rates Module" name="Then I should see &quot;Excellent (740+)&quot; as the value for the credit score" time="0"/>
-  <testcase classname="Scenario: Interacting with the bankrate widget in the Estimated Mortage Rates Module" name="Then I drag the credit score slider all the way to the left" time="0"/>
-  <testcase classname="Scenario: Interacting with the bankrate widget in the Estimated Mortage Rates Module" name="Then I should see &quot;Average (660)&quot; as the value for the credit score" time="0.001"/>
-  <testcase classname="Scenario: Interacting with the bankrate widget in the Estimated Mortage Rates Module" name="Then I drag the credit score slider to the right" time="0"/>
-  <testcase classname="Scenario: Interacting with the bankrate widget in the Estimated Mortage Rates Module" name="Then I should see &quot;Good (700)&quot; as the value for the credit score" time="0"/>
-  <testcase classname="Scenario: Interacting with the bankrate widget in the Estimated Mortage Rates Module" name="Then I can see the bankrate downpayment slider" time="0"/>
-  <testcase classname="Scenario: Interacting with the bankrate widget in the Estimated Mortage Rates Module" name="Then I should see &quot;20 %&quot; as the value for the down payment" time="0"/>
-  <testcase classname="Scenario: Interacting with the bankrate widget in the Estimated Mortage Rates Module" name="Then I drag the down payment slider all the way to the right" time="0"/>
-  <testcase classname="Scenario: Interacting with the bankrate widget in the Estimated Mortage Rates Module" name="Then I should see &quot;40 %&quot; as the value for the down payment" time="0"/>
-  <testcase classname="Scenario: Interacting with the bankrate widget in the Estimated Mortage Rates Module" name="Then I drag the down payment slider all the way to the left" time="0"/>
-  <testcase classname="Scenario: Interacting with the bankrate widget in the Estimated Mortage Rates Module" name="Then I should see &quot;5 %&quot; as the value for the down payment" time="0"/>
-  <testcase classname="Scenario: Interacting with the bankrate widget in the Estimated Mortage Rates Module" name="And I click the bankrate See Additional Rates button" time="0"/>
-  <testcase classname="Scenario: Interacting with the bankrate widget in the Estimated Mortage Rates Module" name="Then I should see &quot;Compare Norfolk, VA Mortgage Rates&quot; in the mortgage rate page" time="0"/>
-  <testcase classname="Scenario: Interacting with the bankrate widget in the Estimated Mortage Rates Module" name="Scenario: Interacting with the bankrate widget in the Estimated Mortage Rates Module" time="0.072"/>
-  <testcase classname="Scenario: Interacting with the informa widget in the Estimated Mortage Rates Module" name="Given I am on a For Sale details page that has the informa widget" time="0"/>
-  <testcase classname="Scenario: Interacting with the informa widget in the Estimated Mortage Rates Module" name="Then I scroll down couple of times for see informa widget" time="0"/>
-  <testcase classname="Scenario: Interacting with the informa widget in the Estimated Mortage Rates Module" name="And I should see &quot;Estimated Mortgage Rates&quot; as the title for the estimated mortgage rate module header at position 4" time="0"/>
-  <testcase classname="Scenario: Interacting with the informa widget in the Estimated Mortage Rates Module" name="Then I can see the Estimated Mortgage Rates Module" time="0"/>
-  <testcase classname="Scenario: Interacting with the informa widget in the Estimated Mortage Rates Module" name="Then I should see &quot;Data provided by Informa Research Services. Payments do not include amounts for taxes and insurance premiums. The actual payment obligation will be greater if taxes and insurance are included.Click&quot; as a paragraph in the informa disclaimer" time="0"/>
-  <testcase classname="Scenario: Interacting with the informa widget in the Estimated Mortage Rates Module" name="Then I should see &quot;for more information on rates and product details. CA Bur. of Real Estate, Lic. #01937608.&quot; as a paragraph in the informa disclaimer" time="0"/>
-  <testcase classname="Scenario: Interacting with the informa widget in the Estimated Mortage Rates Module" name="Scenario: Interacting with the informa widget in the Estimated Mortage Rates Module" time="0.047"/>
-  <testcase classname="Scenario: Submitting Mortage Lead with all required information" name="Given I am on the Mortgage Request Connect page" time="0"/>
-  <testcase classname="Scenario: Submitting Mortage Lead with all required information" name="When I enter &quot;500&quot; in the loan amount field" time="0"/>
-  <testcase classname="Scenario: Submitting Mortage Lead with all required information" name="And I select &quot;10%&quot; from the downpayment dropdown" time="0"/>
-  <testcase classname="Scenario: Submitting Mortage Lead with all required information" name="And I select &quot;Average 640 - 679&quot; from the credit rating dropdown" time="0"/>
-  <testcase classname="Scenario: Submitting Mortage Lead with all required information" name="And I select &quot;Yes, in last 2 years&quot; from the bankruptcy History dropdown1" time="0"/>
-  <testcase classname="Scenario: Submitting Mortage Lead with all required information" name="And I enter &quot;Your Hometown&quot; in the city field" time="0"/>
-  <testcase classname="Scenario: Submitting Mortage Lead with all required information" name="And I select &quot;Florida&quot; from the state dropdown" time="0"/>
-  <testcase classname="Scenario: Submitting Mortage Lead with all required information" name="And I enter &quot;Test&quot; in the first name field" time="0"/>
-  <testcase classname="Scenario: Submitting Mortage Lead with all required information" name="And I enter &quot;Lead&quot; in the last name field" time="0"/>
-  <testcase classname="Scenario: Submitting Mortage Lead with all required information" name="And I enter &quot;1234567890&quot; in the phone field on the mortgage page" time="0"/>
-  <testcase classname="Scenario: Submitting Mortage Lead with all required information" name="And I enter &quot;Mort_Request@regression.test&quot; in the email field on the mortgage page" time="0"/>
-  <testcase classname="Scenario: Submitting Mortage Lead with all required information" name="And I click the get grequalified button" time="0"/>
-  <testcase classname="Scenario: Submitting Mortage Lead with all required information" name="Then I should see &quot;Message Sent!&quot; in the new page" time="0"/>
-  <testcase classname="Scenario: Submitting Mortage Lead with all required information" name="Then I should see &quot;Thanks for submitting your information. A mortgage professional should be getting in touch with you shortly. Now that your information has been sent, where would you like to go:&quot; in the new page" time="0"/>
-  <testcase classname="Scenario: Submitting Mortage Lead with all required information" name="Scenario: Submitting Mortage Lead with all required information" time="0.05"/>
-  <testcase classname="Scenario: Submitting Mortage Lead with all required information" name="Given I am on the Refinance Request page" time="0"/>
-  <testcase classname="Scenario: Submitting Mortage Lead with all required information" name="When I select &quot;Average 640 - 679&quot; from the credit rating dropdown" time="0"/>
-  <testcase classname="Scenario: Submitting Mortage Lead with all required information" name="And I select &quot;Yes, in last 2 years&quot; from the bankruptcy History dropdown1" time="0"/>
-  <testcase classname="Scenario: Submitting Mortage Lead with all required information" name="And I enter &quot;700&quot; in the loan amount field" time="0"/>
-  <testcase classname="Scenario: Submitting Mortage Lead with all required information" name="And I enter &quot;Your Hometown&quot; in the city field" time="0.008"/>
-  <testcase classname="Scenario: Submitting Mortage Lead with all required information" name="And I select &quot;Florida&quot; from the state dropdown" time="0"/>
-  <testcase classname="Scenario: Submitting Mortage Lead with all required information" name="And I enter &quot;Test&quot; in the first name field" time="0.011"/>
-  <testcase classname="Scenario: Submitting Mortage Lead with all required information" name="And I enter &quot;Lead&quot; in the last name field" time="0"/>
-  <testcase classname="Scenario: Submitting Mortage Lead with all required information" name="And I enter &quot;1234567890&quot; in the phone field on the mortgage page" time="0"/>
-  <testcase classname="Scenario: Submitting Mortage Lead with all required information" name="And I enter &quot;Refi_Request@regression.test&quot; in the email field on the mortgage page" time="0"/>
-  <testcase classname="Scenario: Submitting Mortage Lead with all required information" name="And I enter &quot;100&quot; in Estimated Property Value field" time="0"/>
-  <testcase classname="Scenario: Submitting Mortage Lead with all required information" name="And I click the Submit Request button" time="0"/>
-  <testcase classname="Scenario: Submitting Mortage Lead with all required information" name="Then I should see &quot;Message Sent!&quot; in the new page" time="0"/>
-  <testcase classname="Scenario: Submitting Mortage Lead with all required information" name="Then I should see &quot;Thanks for submitting your information. A mortgage professional should be getting in touch with you shortly. Now that your information has been sent, where would you like to go:&quot; on refi request page" time="0"/>
-  <testcase classname="Scenario: Submitting Mortage Lead with all required information" name="Scenario: Submitting Mortage Lead with all required information" time="0.123"/>
-  <testcase classname="Scenario: Submitting Request Home Estimate Form" name="Given I am on the Request Home Estimate page" time="0"/>
+  <testcase classname="Scenario: Submitting Request Home Estimate Form" name="Given I am on the Request Home Estimate page" time="0.008"/>
   <testcase classname="Scenario: Submitting Request Home Estimate Form" name="When I enter &quot;150 Main Street&quot; in the address field" time="0"/>
   <testcase classname="Scenario: Submitting Request Home Estimate Form" name="And I enter &quot;Your Hometown&quot; in the city field" time="0.007"/>
   <testcase classname="Scenario: Submitting Request Home Estimate Form" name="And I select &quot;Florida&quot; from the state dropdown" time="0"/>
@@ -132,5 +75,5 @@
   <testcase classname="Scenario: Submitting Request Home Estimate Form" name="And I click the submitCMARequestFormButton" time="0"/>
   <testcase classname="Scenario: Submitting Request Home Estimate Form" name="Then I should see &quot;Your request has been sent&quot; in the new page" time="0"/>
   <testcase classname="Scenario: Submitting Request Home Estimate Form" name="And I should see &quot;Thank you for completing the free home market analysis. An agent will be contacting you soon with information regarding the home and surrounding real estate market.&quot; on home estimate" time="0"/>
-  <testcase classname="Scenario: Submitting Request Home Estimate Form" name="Scenario: Submitting Request Home Estimate Form" time="0.024"/>
+  <testcase classname="Scenario: Submitting Request Home Estimate Form" name="Scenario: Submitting Request Home Estimate Form" time="0.114"/>
 </testsuite>
