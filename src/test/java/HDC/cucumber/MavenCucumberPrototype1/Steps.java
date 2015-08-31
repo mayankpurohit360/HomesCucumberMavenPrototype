@@ -927,8 +927,8 @@ public void NavigateToSaleDetailBankRateWidget() throws Throwable {
 @Given("^I am on a For Sale details page that has the informa widget$")
 public void NavigateToSaledetailPageInformaWidget() throws Throwable {
     //driver.get("http://homes.com");SaledetailPageInformaWidget
-	homePagePortal = new HomePagePortal(driver);
-	homePagePortal.SaledetailPageInformaWidget();
+	RequestPageMRH = new requestPageMRH(driver);
+	RequestPageMRH.SaledetailPageInformaWidget();
     System.out.println("Mortage Executed navigation");	    
 }
 
@@ -941,8 +941,8 @@ public void NavigateToSaledetailPageInformaWidget() throws Throwable {
 
 @Then("^I scroll down couple of times$")
 public void ScrollPopertyDetailPage() throws Throwable {
-	RequestPageMRH = new requestPageMRH(driver);
-	RequestPageMRH.ScrollMortgagePopertyDetailPageUDP();
+	detailPage = new DetailPage(driver);
+	detailPage.ScrollMortgagePopertyDetailPageUDP();
 	
 	//detailPage.navigateToBuilderUDP();
 	System.out.println("Executed Sale navigation");
@@ -953,16 +953,16 @@ public void MatchMessage(String Message) throws Throwable {
 	String msg=Message;
 	System.out.println("---------------Function called-----------------------------"+msg);
 			
-	System.out.println("ConfirmationMessage Assertion: "+RequestPageMRH.MatchMortageMessage(msg));
+	System.out.println("ConfirmationMessage Assertion: "+detailPage.MatchMortageMessage(msg));
 	
-	Assert.assertTrue("No Confirmation Message", RequestPageMRH.MatchMortageMessage(msg).equals(Message));
-	System.out.println("Is Confirmation Message Displayed: "+RequestPageMRH.MatchMortageMessage(msg).equals(Message));
+	Assert.assertTrue("No Confirmation Message", detailPage.MatchMortageMessage(msg).equals(Message));
+	System.out.println("Is Confirmation Message Displayed: "+detailPage.MatchMortageMessage(msg).equals(Message));
 }  
 
 @Then("^I can see the Estimated Mortgage Rates Module$")
 public void SeeEstimateMortageRate() throws Throwable {
-	RequestPageMRH = new requestPageMRH(driver);
-	RequestPageMRH.SeeEstimateMortageRateModule();
+	detailPage = new DetailPage(driver);
+	detailPage.SeeEstimateMortageRateModule();
 	
 	//detailPage.navigateToBuilderUDP();
 	System.out.println("Executed Sale navigation");
@@ -984,8 +984,8 @@ public void fixedMortageMatchMessage(String Message) throws Throwable {
 }
 @Then("^I can see the bankrate credit score slider$")
 public void BankRateCreditScoreSlider() throws Throwable {
-	RequestPageMRH = new requestPageMRH(driver);
-	RequestPageMRH.MortageBankRateCreditScoreSlider();
+	detailPage = new DetailPage(driver);
+	detailPage.MortageBankRateCreditScoreSlider();
 	
 	//detailPage.navigateToBuilderUDP();
 	System.out.println("Executed Sale navigation");
@@ -997,19 +997,19 @@ public void MatchExcellentMessage(String Message) throws Throwable {
 	String msg=Message;
 	System.out.println("---------------Function called-----------------------------"+msg);
 	
-	RequestPageMRH = new requestPageMRH(driver);
+	 detailPage = new DetailPage(driver);
 	     
-	 System.out.println("ConfirmationMessage Assertion: "+RequestPageMRH.MatchExcellentMessage(msg));
-	Assert.assertTrue("No Confirmation Message", RequestPageMRH.MatchExcellentMessage(msg).equals(Message));
-	System.out.println("Is Confirmation Message Displayed: "+RequestPageMRH.MatchExcellentMessage(msg).equals(Message));
+	 System.out.println("ConfirmationMessage Assertion: "+ detailPage.MatchExcellentMessage(msg));
+	Assert.assertTrue("No Confirmation Message",  detailPage.MatchExcellentMessage(msg).equals(Message));
+	System.out.println("Is Confirmation Message Displayed: "+ detailPage.MatchExcellentMessage(msg).equals(Message));
 	
 	
 }
 @Then("I drag the credit score slider all the way to the left$")
 public void DragSlider() throws Throwable {
 	 driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
-	 RequestPageMRH = new requestPageMRH(driver);
-	 RequestPageMRH.DragSliderLeft();
+	 detailPage = new DetailPage(driver);
+		detailPage.DragSliderLeft();
 	//System.out.println("Submitted Form");  	
 	
 	}
@@ -1017,8 +1017,8 @@ public void DragSlider() throws Throwable {
 public void DragSliderRight() throws Throwable {
 	System.out.println("----right----");
 	 driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
-	 RequestPageMRH = new requestPageMRH(driver);
-	 RequestPageMRH.DragSliderRightShift();
+	 detailPage = new DetailPage(driver);
+		detailPage.DragSliderRightShift();
 	//System.out.println("Submitted Form");  	
 	
 	
@@ -1026,8 +1026,8 @@ public void DragSliderRight() throws Throwable {
 
 @Then("^I can see the bankrate downpayment slider$")
 public void BankRateDownPayementSlider() throws Throwable {
-	RequestPageMRH = new requestPageMRH(driver);
-	RequestPageMRH.MortageBankRateDownPayementScoreSlider();
+	detailPage = new DetailPage(driver);
+	detailPage.MortageBankRateDownPayementScoreSlider();
 	
 	//detailPage.navigateToBuilderUDP();
 	System.out.println("Executed Sale navigation");
@@ -1035,20 +1035,21 @@ public void BankRateDownPayementSlider() throws Throwable {
 
 @Then("^I should see \"([^\"]*)\" as the value for the down payment$")
 public void MatchCreditScoreValue(String Message) throws Throwable {
+	 detailPage = new DetailPage(driver);
 	String msg=Message;
 	System.out.println("---------------Function called-----------------------------"+msg);
 			
-	System.out.println("ConfirmationMessage Assertion: "+RequestPageMRH.MatchCreditScore(msg));
+	System.out.println("ConfirmationMessage Assertion: "+ detailPage.MatchCreditScore(msg));
 	
-	Assert.assertTrue("No Confirmation Message", RequestPageMRH.MatchCreditScore(msg).equals(Message));
-	System.out.println("Is Confirmation Message Displayed: "+RequestPageMRH.MatchCreditScore(msg).equals(Message));
+	Assert.assertTrue("No Confirmation Message",  detailPage.MatchCreditScore(msg).equals(Message));
+	System.out.println("Is Confirmation Message Displayed: "+ detailPage.MatchCreditScore(msg).equals(Message));
 }
 @Then("I drag the down payment slider all the way to the right$")
 public void DragDownPayementSliderRight() throws Throwable {
 	System.out.println("----right----");
 	 driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
-	 RequestPageMRH = new requestPageMRH(driver);
-	 RequestPageMRH.DragdownpayementSliderRightShift();
+	 detailPage = new DetailPage(driver);
+		detailPage.DragdownpayementSliderRightShift();
 	//System.out.println("Submitted Form");  	
 	
 	
@@ -1057,16 +1058,16 @@ public void DragDownPayementSliderRight() throws Throwable {
 public void DragDownPayementSliderLeft() throws Throwable {
 	System.out.println("----right----");
 	 driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
-	 RequestPageMRH = new requestPageMRH(driver);
-	 RequestPageMRH.DragdownpayementSliderLeftShift();
+	 detailPage = new DetailPage(driver);
+		detailPage.DragdownpayementSliderLeftShift();
 	//System.out.println("Submitted Form");  	
 	
 }
 @Then("I click the bankrate Disclaimer$")
 public void ClickDisclaimerbutton() throws Throwable {
 	 driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
-	 RequestPageMRH = new requestPageMRH(driver);
-	 RequestPageMRH.ClickBankDisclaimerlink();
+	 detailPage = new DetailPage(driver);
+		detailPage.ClickBankDisclaimerlink();
 	//System.out.println("Submitted Form");  	
 		
 }
@@ -1076,11 +1077,12 @@ public void MatchDisclamierValue(String Message) throws Throwable {
 	Thread.sleep(20000);
 	String msg=Message;
 	System.out.println("---------------Function called-----------------------------"+msg);
-	RequestPageMRH = new requestPageMRH(driver);
-	System.out.println("ConfirmationMessage Assertion: "+RequestPageMRH.MatchDisclamierValueText(msg));
+	detailPage = new DetailPage(driver);
 	
-	Assert.assertTrue("No Confirmation Message", RequestPageMRH.MatchDisclamierValueText(msg).equals(Message));
-	System.out.println("Is Confirmation Message Displayed: "+RequestPageMRH.MatchDisclamierValueText(msg).equals(Message));
+	System.out.println("ConfirmationMessage Assertion: "+detailPage.MatchDisclamierValueText(msg));
+	
+	Assert.assertTrue("No Confirmation Message", detailPage.MatchDisclamierValueText(msg).equals(Message));
+	System.out.println("Is Confirmation Message Displayed: "+detailPage.MatchDisclamierValueText(msg).equals(Message));
 	
 }
 @Then("^I should see \"([^\"]*)\" as a paragraph in the bankrate disclaimer1$")
@@ -1088,19 +1090,21 @@ public void MatchDisclamierSecondPara(String Message) throws Throwable {
 	Thread.sleep(20000);
 	String msg=Message;
 	System.out.println("---------------Function called-----------------------------"+msg);
-	RequestPageMRH = new requestPageMRH(driver);	
-	System.out.println("ConfirmationMessage Assertion: "+RequestPageMRH.MatchDisclamierSecondPara(msg));
+	detailPage = new DetailPage(driver);
 	
-	Assert.assertTrue("No Confirmation Message", RequestPageMRH.MatchDisclamierSecondPara(msg).equals(Message));
-	System.out.println("Is Confirmation Message Displayed: "+RequestPageMRH.MatchDisclamierSecondPara(msg).equals(Message));
+	
+	System.out.println("ConfirmationMessage Assertion: "+detailPage.MatchDisclamierSecondPara(msg));
+	
+	Assert.assertTrue("No Confirmation Message", detailPage.MatchDisclamierSecondPara(msg).equals(Message));
+	System.out.println("Is Confirmation Message Displayed: "+detailPage.MatchDisclamierSecondPara(msg).equals(Message));
 	
 }
 @Then("^I close the form$")
 public void CloseDispopup() throws Throwable {
 	Thread.sleep(10000);
 	System.out.println("Close Dis popup");
-	RequestPageMRH = new requestPageMRH(driver);	
-	RequestPageMRH.CloseDisclaimerpopup();
+	detailPage = new DetailPage(driver);
+	detailPage.CloseDisclaimerpopup();
 	
 	//detailPage.navigateToBuilderUDP();
 	System.out.println("Executed Sale navigation");
@@ -1109,8 +1113,8 @@ public void CloseDispopup() throws Throwable {
 @Then("I click the bankrate See Additional Rates button$")
 public void ClickBankRateAdditiobalButton() throws Throwable {
 	 driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
-	 RequestPageMRH = new requestPageMRH(driver);
-	 RequestPageMRH.ClickBankRateAdditiobalButtonlink();
+	 detailPage = new DetailPage(driver);
+		detailPage.ClickBankRateAdditiobalButtonlink();
 	//System.out.println("Submitted Form");  	
 		
 }
@@ -1118,17 +1122,17 @@ public void ClickBankRateAdditiobalButton() throws Throwable {
 public void MatchRatePageMessage(String Message) throws Throwable {
 	String msg=Message;
 	System.out.println("---------------Function called-----------------------------"+msg);
-	RequestPageMRH = new requestPageMRH(driver);	
-	System.out.println("ConfirmationMessage Assertion: "+RequestPageMRH.MatchRatePageMortageMessage(msg));
+	 detailPage = new DetailPage(driver);
+	System.out.println("ConfirmationMessage Assertion: "+detailPage.MatchRatePageMortageMessage(msg));
 	
-	Assert.assertTrue("No Confirmation Message", RequestPageMRH.MatchRatePageMortageMessage(msg).equals(Message));
-	System.out.println("Is Confirmation Message Displayed: "+RequestPageMRH.MatchRatePageMortageMessage(msg).equals(Message));
+	Assert.assertTrue("No Confirmation Message", detailPage.MatchRatePageMortageMessage(msg).equals(Message));
+	System.out.println("Is Confirmation Message Displayed: "+detailPage.MatchRatePageMortageMessage(msg).equals(Message));
 }
 
 @Then("^I scroll down couple of times for see informa widget$")
 public void ScrollPopertyDetailPageforseeInforma() throws Throwable {
-	RequestPageMRH = new requestPageMRH(driver);
-	RequestPageMRH.ScrollMortgagePopertyDetailPageUDPForInforma();
+	detailPage = new DetailPage(driver);
+	detailPage.ScrollMortgagePopertyDetailPageUDPForInforma();
 	
 	//detailPage.navigateToBuilderUDP();
 	System.out.println("Executed Sale navigation");
@@ -1137,11 +1141,11 @@ public void ScrollPopertyDetailPageforseeInforma() throws Throwable {
 public void MatchMessage1(String Message) throws Throwable {
 	String msg=Message;
 	System.out.println("---------------Function called-----------------------------"+msg);
-	RequestPageMRH = new requestPageMRH(driver);	
-	System.out.println("ConfirmationMessage Assertion: "+RequestPageMRH.MatchMortageMessage(msg));
+	detailPage = new DetailPage(driver);	
+	System.out.println("ConfirmationMessage Assertion: "+detailPage.MatchMortageMessage(msg));
 	
-	Assert.assertTrue("No Confirmation Message", RequestPageMRH.MatchMortageMessage(msg).equals(Message));
-	System.out.println("Is Confirmation Message Displayed: "+RequestPageMRH.MatchMortageMessage(msg).equals(Message));
+	Assert.assertTrue("No Confirmation Message", detailPage.MatchMortageMessage(msg).equals(Message));
+	System.out.println("Is Confirmation Message Displayed: "+detailPage.MatchMortageMessage(msg).equals(Message));
 }
 @Then("^I should see \"([^\"]*)\" as a paragraph in the informa disclaimer$")
 public void Matchinfodisclaminer(String Message) throws Throwable {
@@ -1166,7 +1170,6 @@ public void Matchinfodisclaminer(String Message) throws Throwable {
 public void ClickContactNowButton() throws Throwable {
 	 driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
 	 detailPage = new DetailPage(driver);
-	 //ClickContactNowButton
 	 detailPage.ClickContactNowButtonOnFRC();
 	//System.out.println("Submitted Form");  	
 		
@@ -1176,7 +1179,6 @@ public void ClickContactNowButton() throws Throwable {
 public void AddtinalProperty() throws Throwable {
 	 driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
 	 detailPage = new DetailPage(driver);
-	 //ClickContactNowButton
 	 detailPage.AddtinalPropertyform();
 	//System.out.println("Submitted Form");  	
 		

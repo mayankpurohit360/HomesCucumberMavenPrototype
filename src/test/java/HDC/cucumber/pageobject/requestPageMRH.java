@@ -36,25 +36,9 @@ public class requestPageMRH extends AbstractPage {
 	   By StreetAddressonMortageLocator=By.xpath("//input[@id='streetAddress']");
 	   By RequestHomeZipFieldlocator=By.xpath("//input[@id='zip']");
 	   By submitCMARequestFormLocator=By.xpath("//input[@id='submitCMARequestForm']");
-	   By MatchMortageMessage=By.xpath("//div[@id='mortgageOffers']//h2[text()='Estimated Mortgage Rates']");
-	   By SeeEstimateMortageRateModule =By.xpath("//div[@id='mortgageOffers']");
-	   By MortageBankRateCreditScoreSlider= By.xpath("//div[@class='ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all']");
-	   By DragSliderLeft =By.xpath("//div[@id='_bankrateSliders']/div/div[2]/a");
-	   By DragSliderLeft1=By.xpath("//div[@class='layout-detail frame-content']");
-	  By DragSliderRightShift =By.xpath("//div[@id='_bankrateSliders']/div/div[2]/a");
-	  By DragSliderRightShift1=By.xpath("//div[@class='layout-detail frame-content']");
-	  By MortageBankRateDownPayementScoreSlider= By.xpath("//div[@class='ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all']");
-	  By DragdownpayementSliderRightShift =By.xpath("//div[@id='_bankrateSliders']/div[2]/div[2]/a");
-	 By DragdownpayementSliderRightShift1= By.xpath("//div[@class='layout-detail frame-content']");
-	By DragdownpayementSliderLeftShift= By.xpath("//div[@id='_bankrateSliders']/div[2]/div[2]/a");
-	By DragdownpayementSliderLeftShift1=By.xpath("//div[@class='layout-detail frame-content']");
-	By ClickBankDisclaimerlink=By.xpath("//div[@id='mortgageOffers']//table[@class='bankrate-table-footer']//td//a[@class='_bankrate_disclaimer bankrate_disclaimer']");
-	By MatchDisclamierSecondPara= By.xpath("//div[@id='BankRateDisclaimer']//p[2]"); 
-	By ClickBankRateAdditiobalButtonlink=By.xpath("//div[@id='mortgageOffers']/div/div/table[2]/tbody/tr/td[2]/a[2]");
-	By MatchRatePageMortageMessage= By.xpath("//div[@class='frame-subheader']//h1[text()='Compare Norfolk, VA Mortgage Rates']");
-	By CloseDisclaimerpopup= By.xpath("//div[@class='ui-dialog ui-widget ui-widget-content ui-corner-all lightbox-bankrateDisclaimer']//a");
+	   
 	
-	public requestPageMRH ScrollMortgagePopertyDetailPageUDPForInforma() 
+	/*public requestPageMRH ScrollMortgagePopertyDetailPageUDPForInforma() 
 	{
 
 
@@ -261,17 +245,17 @@ public class requestPageMRH extends AbstractPage {
 	}
 	public requestPageMRH CloseDisclaimerpopup() {
 	/*	 System.out.println("****************Disclamer popup****************");
-		Robot robot = null;
-		try {
-			robot = new Robot();
-		} catch (AWTException e) {
+	//	Robot robot = null;
+	//	try {
+	//		robot = new Robot();
+	//	} catch (AWTException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		robot.keyPress(KeyEvent.VK_ESCAPE);
-		robot.keyRelease(KeyEvent.VK_ESCAPE);
-		return new requestPageMRH(driver);
-		*/
+	//		e.printStackTrace();
+	////	}
+	//	robot.keyPress(KeyEvent.VK_ESCAPE);
+	//	robot.keyRelease(KeyEvent.VK_ESCAPE);
+	//	return new requestPageMRH(driver);
+		
 		
 		WebElement element = driver.findElement(CloseDisclaimerpopup);
 		//element.click();
@@ -301,7 +285,7 @@ public class requestPageMRH extends AbstractPage {
 	driver.manage().timeouts().implicitlyWait(2000000000, TimeUnit.SECONDS);
 		return new requestPageMRH(driver);
 
-	}
+	}*/
 ////////////////////////////////Mortgage Detail Page////////////////////////////////////////////
 public requestPageMRH PopulateLoanAmountValue(String value) throws InterruptedException
 {
