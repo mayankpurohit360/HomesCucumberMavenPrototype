@@ -52,14 +52,16 @@ public class requestPageMRH extends AbstractPage {
 	By MatchDisclamierSecondPara= By.xpath("//div[@id='BankRateDisclaimer']//p[2]"); 
 	By ClickBankRateAdditiobalButtonlink=By.xpath("//div[@id='mortgageOffers']/div/div/table[2]/tbody/tr/td[2]/a[2]");
 	By MatchRatePageMortageMessage= By.xpath("//div[@class='frame-subheader']//h1[text()='Compare Norfolk, VA Mortgage Rates']");
-	public DetailPage ScrollMortgagePopertyDetailPageUDP() throws InterruptedException
+	By CloseDisclaimerpopup= By.xpath("//div[@class='ui-dialog ui-widget ui-widget-content ui-corner-all lightbox-bankrateDisclaimer']//a");
+	
+	public requestPageMRH ScrollMortgagePopertyDetailPageUDPForInforma() 
 	{
 
 
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
 	jse.executeScript("window.scrollBy(0,2400)", "");
 	driver.manage().timeouts().implicitlyWait(2000000000, TimeUnit.SECONDS);
-		return new DetailPage(driver);
+		return new requestPageMRH(driver);
 
 	}
 	
@@ -69,16 +71,16 @@ public class requestPageMRH extends AbstractPage {
 		return element.getText();
 		
 	}
-	public DetailPage SeeEstimateMortageRateModule() {
+	public requestPageMRH SeeEstimateMortageRateModule() {
 		WebElement element = driver.findElement(SeeEstimateMortageRateModule);
 		//element.click();
-		return new DetailPage(driver);
+		return new requestPageMRH(driver);
 		
 	}
-	public DetailPage MortageBankRateCreditScoreSlider() {
+	public requestPageMRH MortageBankRateCreditScoreSlider() {
 		WebElement element = driver.findElement(MortageBankRateCreditScoreSlider);
 		//element.click();
-		return new DetailPage(driver);
+		return new requestPageMRH(driver);
 		
 	}
 	public String MatchExcellentMessage(String Message){
@@ -87,7 +89,7 @@ public class requestPageMRH extends AbstractPage {
 		return element.getText();
 		
 	}
-	public DetailPage DragSliderLeft() throws InterruptedException
+	public requestPageMRH DragSliderLeft() throws InterruptedException
 	{
 		//Slider1();
 		  WebElement element = driver.findElement(DragSliderLeft);
@@ -119,11 +121,11 @@ public class requestPageMRH extends AbstractPage {
 		       }
 		      
 		      Thread.sleep(10000);
-		      return new DetailPage(driver); 
+		      return new requestPageMRH(driver); 
 		    
 	}
 
-	public DetailPage DragSliderRightShift() throws InterruptedException
+	public requestPageMRH DragSliderRightShift() throws InterruptedException
 	{
 		//SliderRight();
 		System.out.println("----SLIDER FUNCTION CALLED______");
@@ -156,13 +158,13 @@ public class requestPageMRH extends AbstractPage {
 		       }
 		      
 		      Thread.sleep(10000);
-		      return new DetailPage(driver);
-	//	return new DetailPage(driver);
+		      return new requestPageMRH(driver);
+	//	return new requestPageMRH(driver);
 	}
-	public DetailPage MortageBankRateDownPayementScoreSlider() {
+	public requestPageMRH MortageBankRateDownPayementScoreSlider() {
 		WebElement element = driver.findElement(MortageBankRateDownPayementScoreSlider);
 		//element.click();
-		return new DetailPage(driver);
+		return new requestPageMRH(driver);
 		
 	}
 	public String MatchCreditScore(String Message){
@@ -172,7 +174,7 @@ public class requestPageMRH extends AbstractPage {
 		
 	}
 	
-	public DetailPage DragdownpayementSliderRightShift() throws InterruptedException
+	public requestPageMRH DragdownpayementSliderRightShift() throws InterruptedException
 	{
 		  WebElement element = driver.findElement(DragdownpayementSliderRightShift);
 			 WebElement element1 = driver.findElement(DragdownpayementSliderRightShift1);
@@ -203,9 +205,9 @@ public class requestPageMRH extends AbstractPage {
 			       }
 			      
 			      Thread.sleep(10000);
-			      return new DetailPage(driver); 
+			      return new requestPageMRH(driver); 
 	}
-	public DetailPage DragdownpayementSliderLeftShift() throws InterruptedException
+	public requestPageMRH DragdownpayementSliderLeftShift() throws InterruptedException
 	{
 		  WebElement element = driver.findElement(DragdownpayementSliderLeftShift);
 			 WebElement element1 = driver.findElement(DragdownpayementSliderLeftShift1);
@@ -236,14 +238,14 @@ public class requestPageMRH extends AbstractPage {
 			       }
 			      
 			      Thread.sleep(10000);
-			      return new DetailPage(driver);
+			      return new requestPageMRH(driver);
 	}
-	public DetailPage ClickBankDisclaimerlink(){
+	public requestPageMRH ClickBankDisclaimerlink(){
 
 		WebElement element = driver.findElement(ClickBankDisclaimerlink);
 		
 	element.click();
-	return new DetailPage(driver);
+	return new requestPageMRH(driver);
 	}
 	public String MatchDisclamierValueText(String Message){
 		System.out.println("****************************Locator*************************************************************");
@@ -257,8 +259,8 @@ public class requestPageMRH extends AbstractPage {
 		return element.getText();
 		
 	}
-	public DetailPage CloseDisclaimerpopup() {
-		 System.out.println("****************Disclamer popup****************");
+	public requestPageMRH CloseDisclaimerpopup() {
+	/*	 System.out.println("****************Disclamer popup****************");
 		Robot robot = null;
 		try {
 			robot = new Robot();
@@ -268,14 +270,21 @@ public class requestPageMRH extends AbstractPage {
 		}
 		robot.keyPress(KeyEvent.VK_ESCAPE);
 		robot.keyRelease(KeyEvent.VK_ESCAPE);
-		return new DetailPage(driver);
+		return new requestPageMRH(driver);
+		*/
+		
+		WebElement element = driver.findElement(CloseDisclaimerpopup);
+		//element.click();
+
+		element.click();
+		return new requestPageMRH(driver);
 	}
-	public DetailPage ClickBankRateAdditiobalButtonlink(){
+	public requestPageMRH ClickBankRateAdditiobalButtonlink(){
 
 		WebElement element = driver.findElement(ClickBankRateAdditiobalButtonlink);
 		
 	element.click();
-	return new DetailPage(driver);
+	return new requestPageMRH(driver);
 	}
 	public String MatchRatePageMortageMessage(String Message){
 		System.out.println("****************************Locator*************************************************************");
@@ -283,92 +292,92 @@ public class requestPageMRH extends AbstractPage {
 		return element.getText();
 		
 	}
-	public DetailPage ScrollMortgagePopertyDetailPageUDPForInforma() throws InterruptedException
+	public requestPageMRH ScrollMortgagePopertyDetailPageUDP() throws InterruptedException
 	{
 
 
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
 	jse.executeScript("window.scrollBy(0,2000)", "");
 	driver.manage().timeouts().implicitlyWait(2000000000, TimeUnit.SECONDS);
-		return new DetailPage(driver);
+		return new requestPageMRH(driver);
 
 	}
 ////////////////////////////////Mortgage Detail Page////////////////////////////////////////////
-public DetailPage PopulateLoanAmountValue(String value) throws InterruptedException
+public requestPageMRH PopulateLoanAmountValue(String value) throws InterruptedException
 {
 System.out.println("Value on function"+value);	
 WebElement element = driver.findElement(PopulateLoanAmountValue);
 element.clear();
 element.sendKeys(value);	
-return new DetailPage(driver);
+return new requestPageMRH(driver);
 }
 
-public DetailPage DownPayementDropDown(String value){
+public requestPageMRH DownPayementDropDown(String value){
 WebElement ele	=	driver.findElement(DownPayementDropDownValue);
 Select sel	=	new Select(ele);
 sel.selectByVisibleText(value);
 driver.manage().timeouts().implicitlyWait(20000, TimeUnit.SECONDS);
 
-return new DetailPage(driver);
+return new requestPageMRH(driver);
 }
 
-public DetailPage CreditCardDropDown(String value){
+public requestPageMRH CreditCardDropDown(String value){
 WebElement ele	=	driver.findElement(CreditCardDropDownValue);
 Select sel	=	new Select(ele);
 sel.selectByVisibleText(value);
 driver.manage().timeouts().implicitlyWait(20000, TimeUnit.SECONDS);
 
-return new DetailPage(driver);
+return new requestPageMRH(driver);
 }
-public DetailPage Entercityname(String value){
+public requestPageMRH Entercityname(String value){
 driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
 WebElement element = driver.findElement(EntercitynameValue);
 element.clear();
 element.sendKeys(value);
 //driver.manage().timeouts().implicitlyWait(20000, TimeUnit.SECONDS);
 
-return new DetailPage(driver);
+return new requestPageMRH(driver);
 }
 
-public DetailPage StateDropDown(String value){
+public requestPageMRH StateDropDown(String value){
 driver.manage().timeouts().implicitlyWait(200000, TimeUnit.SECONDS);
 WebElement ele	=	driver.findElement(StateDropDownValue);
 Select sel	=	new Select(ele);
 sel.selectByVisibleText(value);
 driver.manage().timeouts().implicitlyWait(20000, TimeUnit.SECONDS);
 
-return new DetailPage(driver);
+return new requestPageMRH(driver);
 }
-public DetailPage firstname(String value){
+public requestPageMRH firstname(String value){
 driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
 WebElement element = driver.findElement(firstnameValue);
 element.clear();
 element.sendKeys(value);
 //driver.manage().timeouts().implicitlyWait(20000, TimeUnit.SECONDS);
 
-return new DetailPage(driver);
+return new requestPageMRH(driver);
 }
 
-public DetailPage lastname(String value){
+public requestPageMRH lastname(String value){
 driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
 WebElement element = driver.findElement(lastnamevalue);
 element.clear();
 element.sendKeys(value);
 //driver.manage().timeouts().implicitlyWait(20000, TimeUnit.SECONDS);
 
-return new DetailPage(driver);
+return new requestPageMRH(driver);
 }
-public DetailPage PhonefieldMortagePage(String value){
+public requestPageMRH PhonefieldMortagePage(String value){
 driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
 WebElement element = driver.findElement(PhoneNumberField);
 element.clear();
 element.sendKeys(value);
 //driver.manage().timeouts().implicitlyWait(20000, TimeUnit.SECONDS);
 
-return new DetailPage(driver);
+return new requestPageMRH(driver);
 }
 
-public DetailPage EmailfieldMortagePage(String value){
+public requestPageMRH EmailfieldMortagePage(String value){
 //System.out.println("Searched City: "+value);
 driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
 WebElement element = driver.findElement(EmailfieldMortagePageValue);
@@ -377,47 +386,47 @@ element.sendKeys(value);
 
 //driver.manage().timeouts().implicitlyWait(20000, TimeUnit.SECONDS);
 
-return new DetailPage(driver);
+return new requestPageMRH(driver);
 }
 
-public DetailPage PrequalifiedButtonMortagePage(){
+public requestPageMRH PrequalifiedButtonMortagePage(){
 WebElement element = driver.findElement(PrequalifiedButtonMortagePageLocator);
 
 element.click();
-return new DetailPage(driver);
+return new requestPageMRH(driver);
 }
 
-public DetailPage SelectBankruptcyOption(String value){
+public requestPageMRH SelectBankruptcyOption(String value){
 WebElement ele	=	driver.findElement(SelectBankruptcyOptionLocator);
 Select sel	=	new Select(ele);
 sel.selectByVisibleText(value);
 driver.manage().timeouts().implicitlyWait(20000, TimeUnit.SECONDS);
-return new DetailPage(driver);
+return new requestPageMRH(driver);
 }
 
-public DetailPage EstimatePropertyValuefield(String value){
+public requestPageMRH EstimatePropertyValuefield(String value){
 driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
 WebElement element = driver.findElement(EstimatePropertyValuefieldLocator);
 element.clear();
 element.sendKeys(value);
-return new DetailPage(driver);
+return new requestPageMRH(driver);
 }
 
-public DetailPage ClickSubmitRequestonRefiRequest(){
+public requestPageMRH ClickSubmitRequestonRefiRequest(){
 WebElement element = driver.findElement(SubmitRequestonRefiRequestlocator);
 element.click();
-return new DetailPage(driver);
+return new requestPageMRH(driver);
 }
 
-public DetailPage EnterStreetAddressonMortage(String value){
+public requestPageMRH EnterStreetAddressonMortage(String value){
 driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
 WebElement element = driver.findElement(StreetAddressonMortageLocator);
 element.clear();
 element.sendKeys(value);
-return new DetailPage(driver);
+return new requestPageMRH(driver);
 }
 
-public DetailPage RequestHomeZipField(String value){
+public requestPageMRH RequestHomeZipField(String value){
 System.out.println("****************************Request Home field************************************************");
 driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
 WebElement element = driver.findElement(RequestHomeZipFieldlocator);
@@ -425,16 +434,16 @@ element.clear();
 element.sendKeys(value);
 //driver.manage().timeouts().implicitlyWait(20000, TimeUnit.SECONDS);
 
-return new DetailPage(driver);
+return new requestPageMRH(driver);
 }
-public DetailPage submitCMARequestForm()
+public requestPageMRH submitCMARequestForm()
 {
 
 WebElement element = driver.findElement(submitCMARequestFormLocator);
 //element.click();
 
 element.click();
-return new DetailPage(driver);
+return new requestPageMRH(driver);
 
 }
 	

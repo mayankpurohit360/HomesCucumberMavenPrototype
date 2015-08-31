@@ -30,7 +30,9 @@ public class DetailPage extends AbstractPage {
 	By CreditRepairCheckBox       = By.xpath("html/body/div[1]/div[1]/div[2]/div[1]/div/div[1]/div[1]/div/form/div[3]/div[1]/div[1]/label");
 	By StickyHeaderButton         = By.cssSelector("._agentCardLink.button");
 	By StickyContactForm          = By.id("agentContactForm");
-	By StickyProgrexionLightBox   = By.id("myHomesOverlayAgentCard");
+	//By StickyProgrexionLightBox   = By.id("myHomesOverlayAgentCard");
+	By StickyProgrexionLightBox   = By.id("myHomesOverlayPropertyLeadSuccessMoving");
+	By StickyProgrexionLightBox1   = By.id("leadConfirm");
 	By StickyNameField            = By.id("name");
 	By StickyEmailField           = By.id("email");
 	By StickyPhoneField           = By.id("phone");
@@ -43,7 +45,8 @@ public class DetailPage extends AbstractPage {
 	By LocalSchoolsToolTip      = By.cssSelector(".icon-tooltip._tooltip");
 	By ViewMoreSchoolsLink      = By.cssSelector(".view-more>a");
 	By LocalSchoolsModuleFR       = By.xpath("html/body/div[1]/div[1]/div[2]/div[2]/div[3]");
-   
+	By ClickContactNowButtonOnFRC       = By.xpath("//div[@class='frcadditionalproperties']//div[2]//input[@name='contactAdditionalProps']");
+    By AddtinalPropertyform =By.xpath("//div[@id='myHomesOverlayAgentCard']");
 	//Detail Page methods
 	public DetailPage PopulateField(String arg1, String arg2){
 		WebElement element = driver.findElement(By.id(arg2));
@@ -205,6 +208,21 @@ public class DetailPage extends AbstractPage {
 		return status;		
 	}
 	
+	public boolean StickyProgrexionLeadForm(){
+		WebDriverWait wait = new WebDriverWait(driver, 15);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(StickyProgrexionLightBox1));
+		WebElement element = driver.findElement(StickyProgrexionLightBox1);
+		boolean status = element.isDisplayed();
+		return status;		
+	}
+	
+	public String StickyForRentProgressionConfirmationText(){
+		WebDriverWait wait = new WebDriverWait(driver, 15);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(StickyProgrexionLightBox1));
+		WebElement element = driver.findElement(StickyProgrexionLightBox1);
+		String FormText = element.getText();
+		return FormText;	
+	}
 	public DetailPage UncheckStickyCreditRepairButton(){
 		WebElement element = driver.findElement(StickyHeaderCreditScoreBtn);
 		element.click();
@@ -262,8 +280,18 @@ public class DetailPage extends AbstractPage {
 		element.click();
 		return new DetailPage(driver);		
 	}
+
+	public DetailPage ClickContactNowButtonOnFRC(){
+		WebElement element = driver.findElement(ClickContactNowButtonOnFRC);
+		element.click();
+		return new DetailPage(driver); 
+	}
 	
-	
+	public DetailPage AddtinalPropertyform(){
+		WebElement element = driver.findElement(AddtinalPropertyform);
+		element.click();
+		return new DetailPage(driver); 
+	}
 	//////////////////////////////// Mortgage Detail Page////////////////////////////////////////////
 	/*public DetailPage PopulateLoanAmountValue(String value) throws InterruptedException
 	{

@@ -380,8 +380,8 @@ public class Steps {
 	@Then("^I should see the Lead Confirmation from sticky header$")
 	public void isStickyConfirmFormPresent() throws Throwable {	
 		Thread.sleep(3000);
-		Assert.assertTrue("No Credit Repair Form", detailPage.StickyProgrexionForm());
-		System.out.println("Is Confirmation Form Displayed: "+detailPage.StickyProgrexionForm());    
+		Assert.assertTrue("No Credit Repair Form", detailPage.StickyProgrexionLeadForm());
+		System.out.println("Is Confirmation Form Displayed: "+detailPage.StickyProgrexionLeadForm());    
 	}
 	
 	@Then("^I should see the form$")
@@ -433,6 +433,19 @@ public class Steps {
 	    
 	}
 	
+	@Then("^I should see \"([^\"]*)\" in the progrexion confirmation form the sticky header uncheck$")
+	public void isTextPresentIsProfrexionUncheckForm(String Message) throws Throwable {
+		Thread.sleep(3000);
+		try{
+			Assert.assertTrue("Message did not match anything in the form", detailPage.StickyForRentProgressionConfirmationText().contains(Message));
+			System.out.println(Message + " - passed");
+			
+		}catch(AssertionError e){
+	          System.out.println(Message + " - failed");
+	          throw e;
+	       }  
+	    
+	}
 	
 	////////////////// School Module /////////////////
 	@Then("^I should see \"([^\"]*)\" in the shcool module$")
@@ -879,16 +892,16 @@ public class Steps {
 @Given("^I am on the Mortgage Request Connect page$")
 public void NavigateToHomePage1() throws Throwable {
     //driver.get("http://homes.com");
-	homePagePortal = new HomePagePortal(driver);
-	homePagePortal.MortageRequestConnectPage();
+	RequestPageMRH = new requestPageMRH(driver);
+	RequestPageMRH.MortageRequestConnectPage();
     System.out.println("Mortage Executed navigation");	    
 }
 
 @Given("^I am on the Refinance Request page$")
 public void NavigateToMortgage() throws Throwable {
     //driver.get("http://homes.com");
-	homePagePortal = new HomePagePortal(driver);
-	homePagePortal.MortageRefiRequestPage();
+	RequestPageMRH = new requestPageMRH(driver);
+	RequestPageMRH.MortageRefiRequestPage();
 	//Thread.sleep(500000);
     System.out.println("Mortage Executed navigation");	    
 }
@@ -896,8 +909,8 @@ public void NavigateToMortgage() throws Throwable {
 @Given("^I am on the Request Home Estimate page$")
 public void NavigateToRequestHomeEstimate() throws Throwable {
     //driver.get("http://homes.com");
-	homePagePortal = new HomePagePortal(driver);
-	homePagePortal.MortageRequestHomeEstimate();
+	RequestPageMRH = new requestPageMRH(driver);
+	RequestPageMRH.MortageRequestHomeEstimate();
 	//Thread.sleep(500000);
     System.out.println("Mortage Executed navigation");	    
 }
@@ -905,8 +918,8 @@ public void NavigateToRequestHomeEstimate() throws Throwable {
 @Given("^I am on a For Sale details page that has the bankrate widget$")
 public void NavigateToSaleDetailBankRateWidget() throws Throwable {
     //driver.get("http://homes.com");
-	homePagePortal = new HomePagePortal(driver);
-	homePagePortal.MortageSalePage();
+	RequestPageMRH = new requestPageMRH(driver);
+	RequestPageMRH.MortageSalePage();
     System.out.println("Mortage Executed navigation");	    
 }
 
@@ -1143,5 +1156,30 @@ public void Matchinfodisclaminer(String Message) throws Throwable {
 	    System.out.println("No Confirmation Message:"+"false");
 	  }}
 
+///////////////////////////////////I am on an FRC details page///////////////////////////////////
+////                                                                                       ///// 
+////       frc_lead_forms_UDP.features                                                    /////
+////                                                                                     /////
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+@And("I click contact now button on new popup$")
+public void ClickContactNowButton() throws Throwable {
+	 driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
+	 detailPage = new DetailPage(driver);
+	 //ClickContactNowButton
+	 detailPage.ClickContactNowButtonOnFRC();
+	//System.out.println("Submitted Form");  	
+		
+}
+
+@Then("I see addtional property form$")
+public void AddtinalProperty() throws Throwable {
+	 driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
+	 detailPage = new DetailPage(driver);
+	 //ClickContactNowButton
+	 detailPage.AddtinalPropertyform();
+	//System.out.println("Submitted Form");  	
+		
+}
 }
 

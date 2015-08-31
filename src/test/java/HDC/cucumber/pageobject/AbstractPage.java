@@ -8,8 +8,8 @@ public class AbstractPage  {
 	
 	protected WebDriver driver;
 	
-	//public String env = "staging";
-	public String env = "dev";
+	public String env = "staging";
+	//public String env = "dev";
 	
 	public AbstractPage (WebDriver driver){
 		this.driver = driver;
@@ -21,7 +21,8 @@ public class AbstractPage  {
 	public String builderUDP  = "http://"+env+".homes.com/property/the-chapel-hill-fl-33333/id-2159229/";
 	public String forRentUDP  = "http://"+env+".homes.com/property/555-street-ln-your-hometown-fl-33333/id-218079618/";
 	public String forRentSRP  = "http://"+env+".homes.com/rentals/your-hometown-fl/?maxprice=1500&minprice=1500";
-	public String FRC_UDP     = "http://"+env+".homes.com/property/christina-lakes-far-south-alaska-ketchikan-ketchikan-ak-99901/id-190682294/";
+	//public String FRC_UDP     = "http://"+env+".homes.com/property/christina-lakes-far-south-alaska-ketchikan-ketchikan-ak-99901/id-190682294/";
+	public String FRC_UDP     = "http://www.homes.com/property/christina-lakes-far-south-alaska-ketchikan-ketchikan-ak-99901/id-190682294/";
 	public String FRC_SRP     = "http://"+env+".homes.com/rentals/ketchikan-ak/";
 		
 	
@@ -81,26 +82,26 @@ public class AbstractPage  {
 		return new SearchPage (driver);		
 	}
 	
-	public DetailPage MortageRequestConnectPage(){
+	public requestPageMRH MortageRequestConnectPage(){
 		//driver.navigate().to("http://www.homes.com/property/the-chapel-hill-fl-33333/id-2159229/");
 		driver.navigate().to("http://www.homes.com/Content/MortgageRequestConnect.cfm/");
 		driver.manage().window().maximize();
-		return new DetailPage (driver);
+		return new requestPageMRH (driver);
 			
 	}
-	public DetailPage MortageRefiRequestPage(){
+	public requestPageMRH MortageRefiRequestPage(){
 		//driver.navigate().to("http://www.homes.com/property/the-chapel-hill-fl-33333/id-2159229/");
 		driver.navigate().to("http://www.homes.com/Content/RefiRequest.cfm");
 		driver.manage().window().maximize();
-		return new DetailPage (driver);
+		return new requestPageMRH (driver);
 			
 	}
 	
-	public DetailPage MortageRequestHomeEstimate(){
+	public requestPageMRH MortageRequestHomeEstimate(){
 		//driver.navigate().to("http://www.homes.com/property/the-chapel-hill-fl-33333/id-2159229/");
 		driver.navigate().to("http://www.homes.com/Content/SoldHomesRequest.cfm");
 		driver.manage().window().maximize();
-		return new DetailPage (driver);
+		return new requestPageMRH (driver);
 			
 	}
 	
