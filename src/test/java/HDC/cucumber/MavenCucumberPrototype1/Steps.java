@@ -55,6 +55,9 @@ public class Steps {
 	SearchPage searchPage;
 	DetailPage detailPage;
 	requestPageMRH RequestPageMRH;
+	requestPageMRH MortgageRequest;
+	requestPageMRH MortgageRequestConnect;
+	requestPageMRH RefinanceRequest;
 	
 	
 	/*
@@ -582,92 +585,43 @@ public class Steps {
 	
 ////////////////////////////////////Mortgage Form Mayank Purohit //////////////////////////////////////	
 	
-	@When("^I enter \"([^\"]*)\" in the loan amount field$")
-	public void PopulateLoanAmount (String value) throws Throwable {
+	@When("^I enter \"([^\"]*)\" in the \"([^\"]*)\" field on the Mortgage Request page$")
+	public void PopulateLoanAmount (String Value, String Target) throws Throwable {
 		
 		//detailPage= new DetailPage(driver);
 		RequestPageMRH = new requestPageMRH(driver);
-		RequestPageMRH.PopulateLoanAmountValue(value);
+		RequestPageMRH.EnterValueInTargetField(Value, Target);
+		System.out.println("Populated " + Target + " Field with: " + Value);
+	 
 	}
-
-	@And ("^I select \"([^\"]*)\" from the downpayment dropdown$") 
-	public void DownPayementDrop(String Name){
-		
-		//detailPage= new DetailPage(driver);
-		RequestPageMRH = new requestPageMRH(driver);
-		RequestPageMRH.DownPayementDropDown(Name);
-		//System.out.println("Populated Phone Field");	
+	@And("^I enter \"([^\"]*)\" in the \"([^\"]*)\" field on the Home Value Estimate form$")
+	public void RequestHomeEstimateAddress(String Value, String Target) throws Throwable {
+		System.out.println("Entered : " + Value + " in the " + Target + " field");
+		MortgageRequest = new requestPageMRH(driver);
+		MortgageRequest.EnterValueInTargetField(Value, Target);
+		System.out.println("Populated " + Target + " Field");
 	}
 	
-	@And ("^I select \"([^\"]*)\" from the credit rating dropdown$") 
-	public void CreditDrop(String Name){
-			
-	//	detailPage= new DetailPage(driver);
-		RequestPageMRH = new requestPageMRH(driver);
-		RequestPageMRH.CreditCardDropDown(Name);
-			
+	@And ("^I select \"([^\"]*)\" from the \"([^\"]*)\" dropdown in the request page$") 
+	public void StateDrop(String Value, String Target ){
+		
+		MortgageRequest = new requestPageMRH(driver);
+		MortgageRequest.SelectValueFromTargetDropDown(Value, Target);
+		System.out.println("Selected "+Value+" from the " +Target+" dropdown");	
 	}
 	
-	@And("^I enter \"([^\"]*)\" in the city field$")
-	public void EnterCity(String value) throws Throwable {
-		System.out.println("Searched City: "+value);
-		
-		//detailPage= new DetailPage(driver);
-		RequestPageMRH = new requestPageMRH(driver);
-		RequestPageMRH.Entercityname(value);
-		
-	}
-
-	@And ("^I select \"([^\"]*)\" from the state dropdown$") 
-	public void StateDrop(String Name){
-			
-	//	detailPage= new DetailPage(driver);
-		RequestPageMRH = new requestPageMRH(driver);
-		RequestPageMRH.StateDropDown(Name);
-	}
-	@And("^I enter \"([^\"]*)\" in the first name field$")
-	public void EnterFirstName(String value) throws Throwable {
-		System.out.println("Searched City: "+value);
-		
-		//detailPage= new DetailPage(driver);
-		RequestPageMRH = new requestPageMRH(driver);
-		RequestPageMRH.firstname(value);
-	}
 	
-	@And("^I enter \"([^\"]*)\" in the last name field$")
-	public void EnterLastName(String value) throws Throwable {
-		System.out.println("Searched City: "+value);
-		
-		
-	//	detailPage= new DetailPage(driver);
-		RequestPageMRH = new requestPageMRH(driver);
-		RequestPageMRH.lastname(value);
-	}
-	@And("^I enter \"([^\"]*)\" in the phone field on the mortgage page$")
-	public void EnterPhoneName(String value) throws Throwable {
-		System.out.println("Searched City: "+value);
-		
-		//detailPage= new DetailPage(driver);
-		RequestPageMRH = new requestPageMRH(driver);
-		RequestPageMRH.PhonefieldMortagePage(value);
-		//detailPage.PopulateLoanAmountValue(value);
-	}
-	@And("^I enter \"([^\"]*)\" in the email field on the mortgage page$")
-	public void EnterEmailName(String value) throws Throwable {
-		System.out.println("Searched City: "+value);
-		
-	//	detailPage= new DetailPage(driver);
-		RequestPageMRH = new requestPageMRH(driver);
-		RequestPageMRH.EmailfieldMortagePage(value);
-	}
-	
-	@And("^I click the get grequalified button$")
+	@And("^I click the get grequalified button from the Mortgage Request Connect page$")
 	public void PrequalifiedButton() throws Throwable {
 		
 		//detailPage= new DetailPage(driver);
-		RequestPageMRH = new requestPageMRH(driver);
-		RequestPageMRH.PrequalifiedButtonMortagePage();
+		MortgageRequestConnect = new requestPageMRH(driver);
+		MortgageRequestConnect.PrequalifiedButtonMortagePage();
+	
 	}
+	
+	
+	
 	@Then("^I should see \"([^\"]*)\" on mortage page$")
 	public void MatchMortagePage(String Message) throws Throwable {
 			if(driver.getPageSource().contains(Message))
@@ -679,28 +633,12 @@ public class Steps {
 		    System.out.println("Fail");
 		  }
 	}
-	@And ("^I select \"([^\"]*)\" from the bankruptcy History dropdown1$") 
-	public void Bankrup(String Name){
-		driver.manage().timeouts().implicitlyWait(200000, TimeUnit.SECONDS);
 
-		//detailPage= new DetailPage(driver);
-		RequestPageMRH = new requestPageMRH(driver);
-		RequestPageMRH.SelectBankruptcyOption(Name);
-		//System.out.println("Populated Phone Field");	
-	}
 	//-----------------------------------Request refi---------------------------------------------
 	
 
-	@And("^I enter \"([^\"]*)\" in Estimated Property Value field$")
-	public void EstimatePropertyValue(String value) throws Throwable {
-		
-		
-		//detailPage= new DetailPage(driver);
-		RequestPageMRH = new requestPageMRH(driver);
-		RequestPageMRH.EstimatePropertyValuefield(value);
-		//detailPage.PopulateLoanAmountValue(value);
-	}
-	@And("^I click the Submit Request button$")
+
+	@And("^I click the Submit Request button from the Refinance Request Page$")
 	public void ClickSubmitRequest() throws Throwable {
 		
 	
@@ -736,23 +674,7 @@ public class Steps {
 	}
 	//-------------------------Request-------------Home-------------Estimate--------------------------
 	
-	@And("^I enter \"([^\"]*)\" in the address field$")
-	public void RequestHomeEstimateAddress(String value) throws Throwable {
-		System.out.println("Searched City: "+value);
-	//	detailPage= new DetailPage(driver);
-		RequestPageMRH = new requestPageMRH(driver);
-		RequestPageMRH.EnterStreetAddressonMortage(value);
-		//System.out.println("Populated Email Field");
-		
-	}
 	
-	@And("^I enter \"([^\"]*)\" in the zip field$")
-	public void RequestHomeZip(String value) throws Throwable {
-		System.out.println("Searched City: "+value);
-		RequestPageMRH = new requestPageMRH(driver);
-		RequestPageMRH.RequestHomeZipField(value);
-	    
-	}
 	
 	@And("^I click the submitCMARequestFormButton$")
 	public void submitCMARequestFormButton() throws Throwable {
