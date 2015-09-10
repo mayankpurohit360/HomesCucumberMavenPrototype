@@ -69,6 +69,23 @@ public class DetailPage extends AbstractPage {
 	By ClickBankRateAdditiobalButtonlink=By.xpath("//div[@id='mortgageOffers']/div/div/table[2]/tbody/tr/td[2]/a[2]");
 	By MatchRatePageMortageMessage= By.xpath("//div[@class='frame-subheader']//h1[text()='Compare Norfolk, VA Mortgage Rates']");
 	By CloseDisclaimerpopup= By.xpath("//div[@class='ui-dialog ui-widget ui-widget-content ui-corner-all lightbox-bankrateDisclaimer']//a");
+    By Clicklistingdropdown= By.xpath("//div[@class='filter-section filter-listingType _filterSection']//div");
+    By ClickUpdateButtonOnListingType= By.xpath("//button[@class='_updater']");
+    By ClickRentalListingTypelocator= By.xpath("//input[@value='RENTALS_NEW-HOME']");
+    By ClickSeniorCommunityListingTypelocator=By.xpath("//input[@value='SENIOR COMMUNITY']");
+    By ClickCorporateGousingListingTypelocator=By.xpath("//input[@value='CORPORATE HOUSING']");
+    By PropertyTypeDropDown=By.xpath("//div[@class='filter-section filter-propertyType _filterSection']//div");
+    By UpdateButtononProperptyDropDownLocator=By.xpath("//div[@class='filter-section filter-propertyType _filterSection is-active']//button");
+    By ClickAllPropertyTypeLocator=By.xpath("//input[@value='All']");
+    By ClickresidentialPropertyTypeLocator= By.xpath("//input[@value='RESIDENTIAL']");
+    By ClickTownHousePropertyTypeLocator=By.xpath("//input[@value='TOWNHOUSE']");
+    By ClickCondominumPropertyTypeLocator= By.xpath("//input[@value='CONDOMINIUM']");
+    By ClickApartmentPropertyTypeLocator= By.xpath("//input[@value='APARTMENT']");
+    By CloseMilitaryPopupwindowLocator=By.xpath("//div[@class='srp-veterans-dialog-close']/span");
+    // For sale filter locator
+    By ClicklistingdropdownonSalePageLocator=By.xpath("//div[@class='results-filter']//div[3]//div");
+    
+    
     
     
     //Detail Page methods
@@ -567,4 +584,108 @@ public class DetailPage extends AbstractPage {
 		return new DetailPage(driver);
 
 	}
+	///////////////////////////For Rent///////////////////////////////////////////////////////////////////////////
+	public DetailPage Clicklistingdropdown(){
+		WebElement element = driver.findElement(Clicklistingdropdown);	
+		element.click();
+		return new DetailPage(driver);
+	}
+	
+	public DetailPage ClickUpdateButtonObListingType(){
+		WebElement element = driver.findElement(ClickUpdateButtonOnListingType);	
+		element.click();
+		return new DetailPage(driver);
+	}
+	
+	public DetailPage ClickRentalListingType(){
+		WebElement element = driver.findElement(ClickRentalListingTypelocator);	
+		element.click();
+		return new DetailPage(driver);
+	}
+	
+	public DetailPage ClickSeniorCommunityListingType(){
+		WebElement element = driver.findElement(ClickSeniorCommunityListingTypelocator);	
+		element.click();
+		return new DetailPage(driver);
+	}
+	
+	public DetailPage ClickCorporateGousingListingType(){
+		WebElement element = driver.findElement(ClickCorporateGousingListingTypelocator);	
+		element.click();
+		return new DetailPage(driver);
+	}
+	
+	public DetailPage PropertyTypeDropDown(){
+		WebElement element = driver.findElement(PropertyTypeDropDown);	
+		element.click();
+		return new DetailPage(driver);
+	}
+	
+	public DetailPage UpdateButtononProperptyDropDown(){
+		WebElement element = driver.findElement(UpdateButtononProperptyDropDownLocator);	
+		element.click();
+		return new DetailPage(driver);
+	}
+	public DetailPage ClickAllPropertyType(){
+		WebElement element = driver.findElement(ClickAllPropertyTypeLocator);	
+		element.click();
+		return new DetailPage(driver);
+	}
+	
+	public DetailPage ClickresidentialPropertyType(){
+		WebElement element = driver.findElement(ClickresidentialPropertyTypeLocator);	
+		element.click();
+		return new DetailPage(driver);
+	}
+	
+	public DetailPage ClickTownHousePropertyType(){
+		WebElement element = driver.findElement(ClickTownHousePropertyTypeLocator);	
+		element.click();
+		return new DetailPage(driver);
+	}
+	
+	public DetailPage ClickCondominumPropertyType(){
+		WebElement element = driver.findElement(ClickCondominumPropertyTypeLocator);	
+		element.click();
+		return new DetailPage(driver);
+	}
+	
+	public DetailPage ClickApartmentPropertyTypeType(){
+		WebElement element = driver.findElement(ClickApartmentPropertyTypeLocator);	
+		element.click();
+		return new DetailPage(driver);
+	}
+	
+	public DetailPage CloseMilitaryPopupwindow(){
+		WebElement element = driver.findElement(CloseMilitaryPopupwindowLocator);	
+		element.click();
+		return new DetailPage(driver);
+	}
+	////////////////////////////////For Sale filter by Mayank////////////////////////////////////////////////////
+	public DetailPage ClicklistingdropdownonSalepage(){
+		WebElement element = driver.findElement(ClicklistingdropdownonSalePageLocator);	
+		element.click();
+		return new DetailPage(driver);
+	}
+	public DetailPage UncheckListingTypeOnSalepage(String arg2) throws InterruptedException
+	{
+	System.out.println("Value on function"+arg2);	
+	WebElement element = driver.findElement(By.xpath("//input[@value='"+arg2+"']"));
+	element.click();
+	return new DetailPage(driver);
+	}
+	
+	public DetailPage ClickPropertyTypeOnSalepage(String arg2) throws InterruptedException
+	{
+	System.out.println("Value on function"+arg2);	
+	WebElement element = driver.findElement(By.xpath("//input[@value='"+arg2+"']"));
+	element.click();
+	return new DetailPage(driver);
+	}
+	/*public DetailPage ClickUpdateButtonObListingTypeonSalePage(){
+		WebElement element = driver.findElement(ClickUpdateButtonOnListingTypeonSalePage);	
+		element.click();
+		return new DetailPage(driver);
+	}*/
+	
 }
