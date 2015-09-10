@@ -1105,5 +1105,176 @@ public void AddtinalProperty() throws Throwable {
 	//System.out.println("Submitted Form");  	
 		
 }
+
+////////////////////////////////////for rent filter by Mayank/////////////////////////////////////////////
+
+@Given("^I am on for rent page$")
+public void NavigateToRentPage() throws Throwable {
+    //driver.get("http://homes.com");
+	homePagePortal = new HomePagePortal(driver);
+	homePagePortal.NovigateToForRentFilter();
+    System.out.println("Executed navigation");	    
+}
+@And("Click listing drop down$")
+public void Clicklistingdrop() throws Throwable {
+	 driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
+	 detailPage = new DetailPage(driver);
+	 detailPage.Clicklistingdropdown();
+	//System.out.println("Submitted Form");  	
+		
+}
+@And("^Click on Update Button$")
+public void ClickUpdateButton() throws Throwable {
+	 driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
+	 detailPage = new DetailPage(driver);
+	 detailPage.ClickUpdateButtonObListingType();
+	//System.out.println("Submitted Form");  	
+		
+}
+
+@And("^Click rental listing type$")
+public void ClickRentalListing() throws Throwable {
+	 driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
+	 detailPage = new DetailPage(driver);
+	 detailPage.ClickRentalListingType();
+	//System.out.println("Submitted Form");  	
+		
+}
+
+@And("^Click senior community listing type$")
+public void ClickSeniorCommunityListing() throws Throwable {
+	 driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
+	 detailPage = new DetailPage(driver);
+	 detailPage.ClickSeniorCommunityListingType();
+	//System.out.println("Submitted Form");  	
+		
+}
+
+@And("^Click CORPORATE HOUSING listing type$")
+public void ClickCorporateGousingListing() throws Throwable {
+	 driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
+	 detailPage = new DetailPage(driver);
+	 detailPage.ClickCorporateGousingListingType();
+	//System.out.println("Submitted Form");  	
+		
+}
+
+@And("^Click property type drop down$")
+public void PropertyTypeDrop() throws Throwable {
+	 driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
+	 detailPage = new DetailPage(driver);
+	 detailPage.PropertyTypeDropDown();
+	//System.out.println("Submitted Form");  	
+		
+}
+
+@And("^Click on Update Button on Property type dopdown$")
+public void UpdateButtononProperpty() throws Throwable {
+	 driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
+	 detailPage = new DetailPage(driver);
+	 detailPage.UpdateButtononProperptyDropDown();
+	//System.out.println("Submitted Form");  	
+		
+}
+
+@And("^I click ALL property type$")
+public void ClickAllProperty() throws Throwable {
+	 driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
+	 detailPage = new DetailPage(driver);
+	 detailPage.ClickAllPropertyType();
+	//System.out.println("Submitted Form");  	
+		
+}
+
+@And("^I click RESIDENTIAL property type$")
+public void ClickresidentialProperty() throws Throwable {
+	 driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
+	 detailPage = new DetailPage(driver);
+	 detailPage.ClickresidentialPropertyType();
+	//System.out.println("Submitted Form");  	
+		
+}
+
+@And("^I click TOWNHOUSE property type$")
+public void ClickTownHouseProperty() throws Throwable {
+	 driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
+	 detailPage = new DetailPage(driver);
+	 detailPage.ClickTownHousePropertyType();
+	//System.out.println("Submitted Form");  	
+		
+}
+
+@And("^I click CONDOMINIUM property type$")
+public void ClickCondominiumProperty() throws Throwable {
+	 driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
+	 detailPage = new DetailPage(driver);
+	 detailPage.ClickCondominumPropertyType();
+	//System.out.println("Submitted Form");  	
+		
+}
+
+@And("^I click APARTMENT property type$")
+public void ClickAppartmentProperty() throws Throwable {
+	 driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
+	 detailPage = new DetailPage(driver);
+	 detailPage.ClickApartmentPropertyTypeType();
+	//System.out.println("Submitted Form");  	
+		
+}
+
+@And("^Close the popup window$")
+public void ClosePopupwindow() throws Throwable {
+	 driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
+	 detailPage = new DetailPage(driver);
+	 detailPage.CloseMilitaryPopupwindow();
+	//System.out.println("Submitted Form");  	
+		
+}
+
+////////////////////////////For Sale filter by Mayank//////////////////////////////////////////////
+@Given("^I am on for sale page$")
+public void NavigateToSalePage() throws Throwable {
+    //driver.get("http://homes.com");
+	homePagePortal = new HomePagePortal(driver);
+	homePagePortal.NovigateToForSaleFilter();
+    System.out.println("Executed navigation");	    
+}
+@And("Click listing drop down on sale page$")
+public void ClicklistingdroponSalePage() throws Throwable {
+	 driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
+	 detailPage = new DetailPage(driver);
+	 detailPage.ClicklistingdropdownonSalepage();
+	//System.out.println("Submitted Form");  	
+		
+}
+
+@And("Uncheck \"([^\"]*)\" listing type$")
+   //Uncheck "NEW HOME" listing type
+public void UncheckListingType(String locator) throws Throwable {
+	 driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
+	 detailPage = new DetailPage(driver);
+	 detailPage.UncheckListingTypeOnSalepage(locator);
+	//System.out.println("Submitted Form");  	
+		
+}
+
+@And("Click \"([^\"]*)\" property type$")
+//Uncheck "NEW HOME" listing type
+public void ClickPropertyType(String locator) throws Throwable {
+	 driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
+	 detailPage = new DetailPage(driver);
+	 detailPage.ClickPropertyTypeOnSalepage(locator);
+	//System.out.println("Submitted Form");  	
+		
+}
+/*@And("^Click on Update Button on sale page$")
+public void ClickUpdateButtononSalePage() throws Throwable {
+	 driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
+	 detailPage = new DetailPage(driver);
+	 detailPage.ClickUpdateButtonObListingTypeonSalePage();
+	//System.out.println("Submitted Form");  	
+		
+}
+*/
 }
 
